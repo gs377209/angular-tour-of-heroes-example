@@ -1,1 +1,18 @@
-<h2>{{ hero }}</h2>
+<h2>My Heroes</h2>
+<mat-list role="list" class="heroes">
+  <mat-list-item role="listitem" *ngFor="let hero of heroes">
+    <button
+      mat-raised-button
+      [color]="hero === selectedHero ? 'accent' : 'primary'"
+      type="button"
+      [matBadge]="hero.id"
+      matBadgePosition="before"
+      matBadgeColor="accent"
+      (click)="onSelect(hero)"
+    >
+      <span class="name">{{ hero.name }}</span>
+    </button>
+  </mat-list-item>
+</mat-list>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
