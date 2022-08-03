@@ -1,7 +1,21 @@
 <h1>{{ title }}</h1>
 <nav>
-  <a mat-stroked-button routerLink="/dashboard">Dashboard</a>
-  <a mat-stroked-button routerLink="/heroes">Heroes</a>
+  <a
+    mat-stroked-button
+    color="primary"
+    routerLink="/dashboard"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+    >Dashboard</a
+  >
+  <a
+    mat-stroked-button
+    color="primary"
+    routerLink="/heroes"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+    >Heroes</a
+  >
 </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
