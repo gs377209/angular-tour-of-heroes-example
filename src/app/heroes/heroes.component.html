@@ -1,18 +1,15 @@
 <h2>My Heroes</h2>
 <mat-list role="list" class="heroes">
   <mat-list-item role="listitem" *ngFor="let hero of heroes">
-    <button
+    <a
       mat-raised-button
-      [color]="hero === selectedHero ? 'accent' : 'primary'"
-      type="button"
+      color="primary"
       [matBadge]="hero.id"
       matBadgePosition="before"
       matBadgeColor="accent"
-      (click)="onSelect(hero)"
+      routerLink="/detail/{{ hero.id }}"
     >
-      <span class="name">{{ hero.name }}</span>
-    </button>
+      {{ hero.name }}
+    </a>
   </mat-list-item>
 </mat-list>
-
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>

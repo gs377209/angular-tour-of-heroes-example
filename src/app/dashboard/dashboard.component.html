@@ -1,0 +1,11 @@
+<h2>Top Heroes</h2>
+<div class="heroes-menu">
+  <a
+    mat-raised-button
+    color="primary"
+    *ngFor="let hero of heroes"
+    routerLink="/detail/{{ hero.id }}"
+  >
+    {{ hero.name }}
+  </a>
+</div>

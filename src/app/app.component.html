@@ -1,3 +1,7 @@
 <h1>{{ title }}</h1>
-<app-heroes></app-heroes>
+<nav>
+  <a mat-stroked-button routerLink="/dashboard">Dashboard</a>
+  <a mat-stroked-button routerLink="/heroes">Heroes</a>
+</nav>
+<router-outlet></router-outlet>
 <app-messages></app-messages>
