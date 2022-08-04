@@ -5,7 +5,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { MessageService } from './message.service';
 import { Hero } from './hero';
-import { HEROES } from './mock-heroes';
 
 @Injectable({
   providedIn: 'root',
@@ -24,13 +23,13 @@ export class HeroService {
   /** GET heroes from the server */
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl).pipe(
-      tap((_) => this.log('fetched heroes')),
+      tap(() => this.log('fetched heroes')),
       catchError(this.handleError<Hero[]>('getHeroes', []))
     );
   }
 
   /** GET hero by id. Return `undefined` when id not found */
-  getHeroNo404<Data>(id: number): Observable<Hero> {
+  getHeroNo404(id: number): Observable<Hero> {
     const url = `${this.heroesUrl}/?id=${id}`;
     return this.http.get<Hero[]>(url).pipe(
       map((heroes) => heroes[0]), // returns a {0|1} element array
@@ -47,7 +46,7 @@ export class HeroService {
     const url = `${this.heroesUrl}/${id}`;
 
     return this.http.get<Hero>(url).pipe(
-      tap((_) => this.log(`fetched hero id=${id}`)),
+      tap(() => this.log(`fetched hero id=${id}`)),
       catchError(this.handleError<Hero>(`getHero id=${id}`))
     );
   }
@@ -83,16 +82,16 @@ export class HeroService {
     const url = `${this.heroesUrl}/${id}`;
 
     return this.http.delete<Hero>(url, this.httpOptions).pipe(
-      tap((_) => this.log(`deleted hero id=${id}`)),
+      tap(() => this.log(`deleted hero id=${id}`)),
       catchError(this.handleError<Hero>('deleteHero'))
     );
   }
 
   /** PUT: update the hero on the server */
-  updateHero(hero: Hero): Observable<any> {
+  updateHero(hero: Hero): Observable<unknown> {
     return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
-      tap((_) => this.log(`updated hero id=${hero.id}`)),
-      catchError(this.handleError<any>('updateHero'))
+      tap(() => this.log(`updated hero id=${hero.id}`)),
+      catchError(this.handleError<never>('updateHero'))
     );
   }
 
@@ -104,12 +103,14 @@ export class HeroService {
    * @param result - optional value to return as the observable result
    */
   private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
+    return (error: unknown): Observable<T> => {
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
 
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
+      // assume error has message
+      const errorForDisplay = error as { message: string };
+      this.log(`${operation} failed: ${errorForDisplay.message}`);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);

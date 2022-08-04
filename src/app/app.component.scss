@@ -4,9 +4,9 @@ nav {
   /* flexbox */
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-content: flex-start;
   align-items: flex-start;
+  justify-content: flex-start;
 
   > a {
     margin: 0 1rem 1rem 0;

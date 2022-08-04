@@ -5,30 +5,28 @@ h2 {
 }
 
 .heroes-menu {
-  padding: 0;
-  margin: auto;
-  max-width: 1000px;
-
   /* flexbox */
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-flow: row wrap;
   align-content: flex-start;
   align-items: flex-start;
+  justify-content: space-around;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0;
 
   > a {
-    min-width: 70px;
-    margin: 0.5rem auto;
-
-    /* flexbox */
-    order: 0;
     flex: 0 1 auto;
     align-self: auto;
 
+    /* flexbox */
+    order: 0;
+    min-width: 70px;
+    margin: 0.5rem auto;
+
     @media (min-width: 600px) {
-      width: 18%;
       box-sizing: content-box;
+      width: 18%;
     }
   }
 }
