@@ -1,11 +1,12 @@
 /* HeroesComponent's private CSS styles */
-.heroes {
-  width: 15rem;
-  margin: 0 0 2rem;
-  padding: 0;
-  list-style-type: none;
+mat-list-item {
+  margin-top: 0.5rem;
+
+  a {
+    min-width: 200px;
+  }
 }
 
-mat-list-item {
-  margin: 1rem;
+mat-card {
+  margin-bottom: 1rem;
 }

@@ -1,21 +1,25 @@
-<div *ngIf="messageService.messages.length">
-  <h2>Messages</h2>
-  <button
-    mat-raised-button
-    color="primary"
-    type="button"
-    class="clear"
-    (click)="messageService.clear()"
-  >
-    Clear messages
-  </button>
-  <mat-list role="list">
-    <mat-list-item
-      role="listitem"
-      *ngFor="let message of messageService.messages"
+<mat-card *ngIf="messageService.messages.length">
+  <mat-card-title>Messages</mat-card-title>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item
+        role="listitem"
+        *ngFor="let message of messageService.messages"
+      >
+        {{ message }}
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      class="clear"
+      (click)="messageService.clear()"
     >
-      {{ message }}
-      <mat-divider></mat-divider>
-    </mat-list-item>
-  </mat-list>
-</div>
+      Clear messages
+    </button>
+  </mat-card-actions>
+</mat-card>

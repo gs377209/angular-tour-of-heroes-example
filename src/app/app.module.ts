@@ -1,5 +1,5 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -17,11 +17,22 @@ import { MatListModule } from '@angular/material/list';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroAddressFormComponent } from './hero-address-form/hero-address-form.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { InMemoryDataService } from './in-memory-data.service';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MessagesComponent } from './messages/messages.component';
+import { NewDashComponent } from './new-dash/new-dash.component';
+import { NewNavComponent } from './new-nav/new-nav.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +42,9 @@ import { MessagesComponent } from './messages/messages.component';
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
+    HeroAddressFormComponent,
+    NewNavComponent,
+    NewDashComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +65,15 @@ import { MessagesComponent } from './messages/messages.component';
     MatBadgeModule,
     MatIconModule,
     MatAutocompleteModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatGridListModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
