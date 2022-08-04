@@ -33,6 +33,28 @@
             "prefix": "app",
             "style": "kebab-case"
           }
+        ],
+        "sort-imports": [
+          "error",
+          {
+            "ignoreCase": false,
+            "ignoreDeclarationSort": false,
+            "ignoreMemberSort": false,
+            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+            "allowSeparatedGroups": true
+          }
+        ],
+        "no-duplicate-imports": "error",
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["lodash", "lodash/*"],
+                "message": "Please use 'lodash-es' instead."
+              }
+            ]
+          }
         ]
       }
     },

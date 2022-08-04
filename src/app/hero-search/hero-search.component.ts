@@ -21,6 +21,11 @@ export class HeroSearchComponent implements OnInit {
     this.searchTerms.next(term);
   }
 
+  // Push a search term into the observable stream.
+  clear(): void {
+    this.searchTerms.next('');
+  }
+
   ngOnInit(): void {
     this.heroes$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term

@@ -1,6 +1,6 @@
 <h2>My Heroes</h2>
 
-<div>
+<form>
   <label for="new-hero">Hero name: </label>
   <input id="new-hero" #heroName />
 
@@ -12,7 +12,7 @@
   >
     Add hero
   </button>
-</div>
+</form>
 
 <mat-list role="list" class="heroes">
   <mat-list-item role="listitem" *ngFor="let hero of heroes">

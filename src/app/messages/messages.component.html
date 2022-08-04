@@ -9,5 +9,13 @@
   >
     Clear messages
   </button>
-  <div *ngFor="let message of messageService.messages">{{ message }}</div>
+  <mat-list role="list">
+    <mat-list-item
+      role="listitem"
+      *ngFor="let message of messageService.messages"
+    >
+      {{ message }}
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
 </div>
