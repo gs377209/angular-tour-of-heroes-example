@@ -9,9 +9,20 @@
   >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a
+        mat-list-item
+        routerLink="/dashboard"
+        routerLinkActive="mat-accent"
+        ariaCurrentWhenActive="page"
+        >Dashboard</a
+      >
+      <a
+        mat-list-item
+        routerLink="/heroes"
+        routerLinkActive="mat-accent"
+        ariaCurrentWhenActive="page"
+        >Heroes</a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -25,8 +36,12 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>angular-tour-of-heroes-example</span>
+      <span>Tour of Heroes</span>
     </mat-toolbar>
     <!-- Add Content Here -->
+    <main>
+      <router-outlet></router-outlet>
+      <app-messages></app-messages>
+    </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
