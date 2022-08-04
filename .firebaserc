@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-heroes-example": {
+      "hosting": {
+        "angular-tour-of-heroes-example": [
+          "angular-heroes-example"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-heroes-example"
+  }
+}

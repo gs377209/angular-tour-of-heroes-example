@@ -5,13 +5,14 @@
     "ng": "ng",
     "start": "ng serve --open",
     "build": "ng build",
+    "deploy": "ng deploy",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prettier": "prettier --write .",
     "prettier:check": "prettier --check .",
     "prepare": "husky install",
     "lint": "ng lint",
-    "stylelint": "stylelint '**/*.{css,scss,sass}'"
+    "stylelint": "stylelint 'src/**/*.{css,scss,sass}'"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +21,7 @@
     "@angular/common": "^14.1.0",
     "@angular/compiler": "^14.1.0",
     "@angular/core": "^14.1.0",
+    "@angular/fire": "^7.4.1",
     "@angular/forms": "^14.1.0",
     "@angular/material": "^14.1.0",
     "@angular/platform-browser": "^14.1.0",

@@ -102,6 +102,16 @@
           "options": {
             "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "angular-tour-of-heroes-example:build:production",
+            "firebaseProject": "angular-heroes-example",
+            "firebaseHostingSite": "angular-heroes-example"
+          }
         }
       }
     }
