@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve --open",
     "build": "ng build",
-    "build:gh-pages": "ng build --output-path docs --base-href /angular-tour-of-heroes-example/ && cp docs/index.html docs/404.html",
+    "build:gh-pages": "ng build --output-path docs --base-href /angular-tour-of-heroes-example/ && cp docs/index.html docs/404.html && git add . && git commit --no-verify -m 'deploying gh-pages' && git push",
     "deploy": "ng deploy",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
