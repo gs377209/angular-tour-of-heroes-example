@@ -1,6 +1,7 @@
 {
   "name": "angular-tour-of-heroes-example",
   "version": "0.0.0",
+  "description": "learning angular",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
@@ -13,7 +14,10 @@
     "prettier:check": "prettier --check .",
     "prepare": "husky install",
     "lint": "ng lint",
-    "stylelint": "stylelint 'src/**/*.{css,scss,sass}'"
+    "stylelint": "stylelint 'src/**/*.{css,scss,sass}'",
+    "preversion": "npm run test:ci",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags && rm -rf build/temp && rm -rf dist"
   },
   "private": true,
   "dependencies": {
