@@ -16,7 +16,7 @@
     "lint": "ng lint",
     "stylelint": "stylelint 'src/**/*.{css,scss,sass}'",
     "preversion": "npm run test:ci",
-    "version": "npm run build && git add -A dist",
+    "version": "npm run build && git add .",
     "postversion": "git push && git push --tags && rm -rf build/temp && rm -rf dist"
   },
   "private": true,
