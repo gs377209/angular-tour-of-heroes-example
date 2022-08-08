@@ -19,7 +19,6 @@
     "version": "npm run build && git add .",
     "postversion": "git push && git push --tags && rm -rf build/temp && rm -rf dist"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^14.1.1",
     "@angular/cdk": "^14.1.1",
