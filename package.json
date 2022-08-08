@@ -1,6 +1,6 @@
 {
   "name": "angular-tour-of-heroes-example",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "learning angular",
   "scripts": {
     "ng": "ng",
