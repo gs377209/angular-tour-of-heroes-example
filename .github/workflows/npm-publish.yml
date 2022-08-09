@@ -36,6 +36,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com
+          scope: "@gs377209"
 
       # Setup .npmrc file to publish to GitHub Packages: https://github.com/actions/setup-node/issues/130
       - name: Authenticate with the GitHub Package Registry
