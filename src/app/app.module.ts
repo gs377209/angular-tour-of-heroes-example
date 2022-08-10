@@ -35,6 +35,7 @@ import { MatListModule } from '@angular/material/list';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DirectivesComponent } from './directives/directives.component';
 import { HeroAddressFormComponent } from './hero-address-form/hero-address-form.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
@@ -51,6 +52,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MessagesComponent } from './messages/messages.component';
 import { NewDashComponent } from './new-dash/new-dash.component';
 import { NewNavComponent } from './new-nav/new-nav.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { TestDirective } from './test.directive';
+import { TestPipePipe } from './test-pipe.pipe';
+import { UnlessDirective } from './unless.directive';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -64,6 +69,10 @@ import { environment } from '../environments/environment';
     HeroAddressFormComponent,
     NewNavComponent,
     NewDashComponent,
+    TestDirective,
+    TestPipePipe,
+    DirectivesComponent,
+    UnlessDirective,
   ],
   imports: [
     BrowserModule,
@@ -103,6 +112,12 @@ import { environment } from '../environments/environment';
     providePerformance(() => getPerformance()),
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
   ],
   providers: [ScreenTrackingService, UserTrackingService],
   bootstrap: [AppComponent],

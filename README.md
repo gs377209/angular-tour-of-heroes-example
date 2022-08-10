@@ -13,7 +13,7 @@ Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The appl
 
 ## Code scaffolding
 
-Run `npm run ng -- generate component component-name` to generate a new component. You can also use `npm run ng -- generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `npm run ng -- generate component component-name` to generate a new component. You can also use `npm run ng -- generate directive|pipe|service|class|guard|interface|enum|module|interceptor|resolver|web-worker`.
 
 ## Build
 
