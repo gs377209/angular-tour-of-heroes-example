@@ -14,10 +14,10 @@
           <mat-radio-button value="cyan">Cyan</mat-radio-button>
         </mat-radio-group>
       </div>
-      <p [appTest]="color">Highlight me!</p>
-      <p [appTest]="color" defaultColor="violet">Highlight me too!</p>
+      <p [appHighlight]="color">Highlight me!</p>
+      <p [appHighlight]="color" defaultColor="violet">Highlight me too!</p>
 
-      <p ngNonBindable [appTest]="'lightgreen'">
+      <p ngNonBindable [appHighlight]="'lightgreen'">
         This should not evaluate: {{ 1 + 1 }}, but will highlight yellow.
       </p>
 

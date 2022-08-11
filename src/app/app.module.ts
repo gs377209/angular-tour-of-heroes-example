@@ -34,12 +34,14 @@ import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { HeroAddressFormComponent } from './hero-address-form/hero-address-form.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { HighlightDirective } from './highlight.directive';
 import { InMemoryDataService } from './in-memory-data.service';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatCardModule } from '@angular/material/card';
@@ -52,9 +54,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MessagesComponent } from './messages/messages.component';
 import { NewDashComponent } from './new-dash/new-dash.component';
 import { NewNavComponent } from './new-nav/new-nav.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { TestDirective } from './test.directive';
-import { TestPipePipe } from './test-pipe.pipe';
 import { UnlessDirective } from './unless.directive';
 import { environment } from '../environments/environment';
 
@@ -69,10 +70,11 @@ import { environment } from '../environments/environment';
     HeroAddressFormComponent,
     NewNavComponent,
     NewDashComponent,
-    TestDirective,
-    TestPipePipe,
+    HighlightDirective,
     DirectivesComponent,
     UnlessDirective,
+    PageNotFoundComponent,
+    CrisisListComponent,
   ],
   imports: [
     BrowserModule,
