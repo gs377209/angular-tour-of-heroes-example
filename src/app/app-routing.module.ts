@@ -4,6 +4,7 @@ import {
   RouterStateSnapshot,
   Routes,
   TitleStrategy,
+  UrlSegment,
 } from '@angular/router';
 
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
@@ -14,6 +15,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { NewDashComponent } from './new-dash/new-dash.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProfileComponent } from './profile/profile.component';
 import { Title } from '@angular/platform-browser';
 
 const routes: Routes = [
@@ -36,6 +38,21 @@ const routes: Routes = [
   },
   { path: 'directives', title: 'Directives', component: DirectivesComponent },
   { path: 'crisis-list', title: 'Crisis List', component: CrisisListComponent },
+  {
+    matcher: (url) => {
+      if (url.length === 1 && url[0].path.match(/^@\w+$/gm)) {
+        return {
+          consumed: url,
+          posParams: {
+            username: new UrlSegment(url[0].path.slice(1), {}),
+          },
+        };
+      }
+
+      return null;
+    },
+    component: ProfileComponent,
+  },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: '**', title: 'Page Not Found', component: PageNotFoundComponent },
 ];

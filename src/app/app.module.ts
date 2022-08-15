@@ -55,6 +55,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { NewDashComponent } from './new-dash/new-dash.component';
 import { NewNavComponent } from './new-nav/new-nav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProfileComponent } from './profile/profile.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { UnlessDirective } from './unless.directive';
 import { environment } from '../environments/environment';
@@ -75,6 +76,7 @@ import { environment } from '../environments/environment';
     UnlessDirective,
     PageNotFoundComponent,
     CrisisListComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
