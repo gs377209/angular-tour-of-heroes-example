@@ -33,14 +33,15 @@
   <mat-card-title>Heroes</mat-card-title>
   <mat-card-content>
     <mat-list role="list" class="heroes">
-      <mat-list-item role="listitem" *ngFor="let hero of heroes">
+      <mat-list-item role="listitem" *ngFor="let hero of heroes$ | async">
         <a
           mat-raised-button
           color="primary"
           [matBadge]="hero.id"
           matBadgePosition="before"
           matBadgeColor="accent"
-          routerLink="/detail/{{ hero.id }}"
+          [routerLink]="['/hero', hero.id]"
+          [class.selected]="hero.id === selectedId"
         >
           {{ hero.name }}
         </a>

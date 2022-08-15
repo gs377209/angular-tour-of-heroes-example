@@ -3,7 +3,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { asyncData } from 'src/testing/async-observable-helpers';
 
 import { HeroSearchComponent } from './hero-search.component';
-import { HeroService } from '../hero.service';
+import { HeroService } from '../../hero.service';
 
 describe('HeroSearchComponent', () => {
   let component: HeroSearchComponent;

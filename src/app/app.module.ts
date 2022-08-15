@@ -24,34 +24,30 @@ import { NgModule } from '@angular/core';
 
 // Material Design
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DirectivesComponent } from './directives/directives.component';
-import { HeroAddressFormComponent } from './hero-address-form/hero-address-form.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { HeroFormComponent } from './hero-form/hero-form.component';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
-import { HeroesComponent } from './heroes/heroes.component';
+import { HeroesModule } from './heroes/heroes.module';
 import { HighlightDirective } from './highlight.directive';
 import { InMemoryDataService } from './in-memory-data.service';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatCardModule } from '@angular/material/card';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatSelectModule } from '@angular/material/select';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MessagesComponent } from './messages/messages.component';
 import { NewDashComponent } from './new-dash/new-dash.component';
 import { NewNavComponent } from './new-nav/new-nav.component';
@@ -64,12 +60,8 @@ import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent,
-    HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent,
-    HeroAddressFormComponent,
     NewNavComponent,
     NewDashComponent,
     HighlightDirective,
@@ -78,11 +70,9 @@ import { environment } from '../environments/environment';
     PageNotFoundComponent,
     CrisisListComponent,
     ProfileComponent,
-    HeroFormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     HttpClientModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
@@ -124,6 +114,8 @@ import { environment } from '../environments/environment';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    HeroesModule,
+    AppRoutingModule,
   ],
   providers: [ScreenTrackingService, UserTrackingService],
   bootstrap: [AppComponent],

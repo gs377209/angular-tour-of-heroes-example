@@ -12,7 +12,7 @@ describe('HeroDetailComponent', () => {
   let expectedHero: Hero;
 
   beforeEach(async () => {
-    expectedHero = { id: 1, name: 'Test Hero' };
+    expectedHero = { id: 1, name: 'Test Hero', power: 'Test Power' };
     const activatedRoute = {
       snapshot: {
         paramMap: {
