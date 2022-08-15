@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { HeroAddressFormComponent } from './hero-address-form/hero-address-form.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { NewDashComponent } from './new-dash/new-dash.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -38,6 +39,7 @@ const routes: Routes = [
   },
   { path: 'directives', title: 'Directives', component: DirectivesComponent },
   { path: 'crisis-list', title: 'Crisis List', component: CrisisListComponent },
+  { path: 'hero-form', title: 'Hero Form', component: HeroFormComponent },
   {
     matcher: (url) => {
       if (url.length === 1 && url[0].path.match(/^@\w+$/gm)) {
@@ -73,7 +75,12 @@ export class TemplatePageTitleStrategy extends TitleStrategy {
 }
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(
+      routes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
+  ],
   exports: [RouterModule],
   providers: [{ provide: TitleStrategy, useClass: TemplatePageTitleStrategy }],
 })
