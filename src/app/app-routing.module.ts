@@ -51,6 +51,7 @@ const routes: Routes = [
 
       return null;
     },
+    title: 'Profile',
     component: ProfileComponent,
   },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
