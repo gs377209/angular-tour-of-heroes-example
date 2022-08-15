@@ -6,6 +6,7 @@ import {
   TitleStrategy,
 } from '@angular/router';
 
+import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { HeroAddressFormComponent } from './hero-address-form/hero-address-form.component';
@@ -34,6 +35,7 @@ const routes: Routes = [
     component: NewDashComponent,
   },
   { path: 'directives', title: 'Directives', component: DirectivesComponent },
+  { path: 'crisis-list', title: 'Crisis List', component: CrisisListComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: '**', title: 'Page Not Found', component: PageNotFoundComponent },
 ];
