@@ -1,0 +1,90 @@
+<mat-card *ngIf="!submitted">
+  <form #heroForm="ngForm" (ngSubmit)="onSubmit()">
+    <mat-card-title>Hero Form</mat-card-title>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label for="name">Name</mat-label>
+        <input
+          matInput
+          placeholder="Name"
+          name="name"
+          id="name"
+          required
+          [(ngModel)]="model.name"
+          #name="ngModel"
+        />
+        <mat-error *ngIf="!name.valid && !name.pristine">
+          Name is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label for="alter-ego">Alter Ego</mat-label>
+        <input
+          matInput
+          placeholder="Alter Ego"
+          name="alter-ego"
+          id="alter-ego"
+          [(ngModel)]="model.alterEgo"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label for="power">Hero Power</mat-label>
+        <mat-select
+          id="power"
+          name="power"
+          required
+          [(ngModel)]="model.power"
+          #power="ngModel"
+        >
+          <mat-option *ngFor="let pow of powers" [value]="pow">{{
+            pow
+          }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="!power.valid && !power.pristine">
+          Power is required
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!heroForm.form.valid"
+      >
+        Submit
+      </button>
+      <button
+        mat-raised-button
+        color="accent"
+        type="button"
+        (click)="newHero(); heroForm.reset()"
+      >
+        New Hero
+      </button>
+    </mat-card-actions>
+  </form>
+</mat-card>
+
+<mat-card *ngIf="submitted">
+  <mat-card-title>You submitted the following:</mat-card-title>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem">Name: {{ model.name }}</mat-list-item>
+      <mat-list-item role="listitem"
+        >Alter Ego: {{ model.alterEgo }}</mat-list-item
+      >
+      <mat-list-item role="listitem">Power: {{ model.power }}</mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      (click)="submitted = false"
+    >
+      Edit
+    </button>
+  </mat-card-actions>
+</mat-card>

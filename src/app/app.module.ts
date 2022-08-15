@@ -39,6 +39,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { HeroAddressFormComponent } from './hero-address-form/hero-address-form.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HighlightDirective } from './highlight.directive';
@@ -77,6 +78,7 @@ import { environment } from '../environments/environment';
     PageNotFoundComponent,
     CrisisListComponent,
     ProfileComponent,
+    HeroFormComponent,
   ],
   imports: [
     BrowserModule,
