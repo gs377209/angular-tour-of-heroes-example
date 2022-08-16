@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
+
+import { ActivatedRouteStub } from 'src/testing/activated-route-stub';
 import { asyncData } from 'src/testing/async-observable-helpers';
 
 import { Hero } from '../hero';
@@ -13,13 +15,8 @@ describe('HeroDetailComponent', () => {
 
   beforeEach(async () => {
     expectedHero = { id: 1, name: 'Test Hero', power: 'Test Power' };
-    const activatedRoute = {
-      snapshot: {
-        paramMap: {
-          get: () => expectedHero.id,
-        },
-      },
-    };
+
+    const activatedRoute = new ActivatedRouteStub({ id: expectedHero.id });
     const heroService = jasmine.createSpyObj('HeroService', ['getHero']);
     heroService.getHero.and.returnValue(asyncData(expectedHero));
 
