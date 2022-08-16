@@ -25,7 +25,7 @@
       >
       <a
         mat-list-item
-        routerLink="/crisis-list"
+        routerLink="/crisis-center"
         routerLinkActive="mat-accent"
         ariaCurrentWhenActive="page"
         >Crisis Center</a
@@ -65,6 +65,13 @@
         ariaCurrentWhenActive="page"
         >Hero Form</a
       >
+      <a
+        mat-list-item
+        [routerLink]="[{ outlets: { popup: ['compose'] } }]"
+        routerLinkActive="mat-accent"
+        ariaCurrentWhenActive="page"
+        >Contact</a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -85,6 +92,7 @@
       <div [@routeAnimation]="getAnimationData()">
         <router-outlet></router-outlet>
       </div>
+      <router-outlet name="popup"></router-outlet>
       <app-messages></app-messages>
     </main>
   </mat-sidenav-content>

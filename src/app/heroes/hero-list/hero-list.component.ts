@@ -11,7 +11,6 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./hero-list.component.scss'],
 })
 export class HeroListComponent implements OnInit {
-  heroes: Hero[] = [];
   heroes$!: Observable<Hero[]>;
   selectedId = 0;
 
@@ -40,13 +39,18 @@ export class HeroListComponent implements OnInit {
     if (!name) {
       return;
     }
-    this.heroService.addHero({ name } as Hero).subscribe((hero) => {
-      this.heroes.push(hero);
+    this.heroService.addHero({ name } as Hero).subscribe(() => {
+      // old way of quickly updating
+      // this.heroes.push(hero);
+      this.getHeroes();
     });
   }
 
   delete(hero: Hero): void {
-    this.heroes = this.heroes.filter((h) => h !== hero);
-    this.heroService.deleteHero(hero.id).subscribe();
+    // old way of quickly updating
+    // this.heroes = this.heroes.filter((h) => h !== hero);
+    this.heroService.deleteHero(hero.id).subscribe(() => {
+      this.getHeroes();
+    });
   }
 }

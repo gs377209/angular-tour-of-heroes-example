@@ -1,0 +1,64 @@
+<h2>My Crises</h2>
+
+<a mat-raised-button color="accent" routerLink="/sidekicks">
+  Go to sidekicks
+</a>
+
+<form>
+  <mat-card>
+    <mat-card-title>Add Crisis</mat-card-title>
+    <mat-card-subtitle>Don't you want more???</mat-card-subtitle>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Crisis name: </mat-label>
+        <input matInput id="new-crisis" #crisisName placeholder="name" />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- (click) passes input value to add() and then clears the input -->
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="add-button"
+        (click)="add(crisisName.value); crisisName.value = ''"
+      >
+        Add crisis
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+<mat-card>
+  <mat-card-title>Crises</mat-card-title>
+  <mat-card-content>
+    <mat-list role="list" class="crises">
+      <mat-list-item role="listitem" *ngFor="let crisis of crises$ | async">
+        <a
+          mat-raised-button
+          color="primary"
+          [matBadge]="crisis.id"
+          matBadgePosition="before"
+          matBadgeColor="accent"
+          [routerLink]="['/crisis-center', crisis.id]"
+          [class.selected]="crisis.id === selectedId"
+        >
+          {{ crisis.name }}
+        </a>
+        <button
+          mat-icon-button
+          color="warn"
+          type="button"
+          aria-label="Delete Crisis"
+          class="delete"
+          title="delete crisis"
+          (click)="delete(crisis)"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<router-outlet></router-outlet>

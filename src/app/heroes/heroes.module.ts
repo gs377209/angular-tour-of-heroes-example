@@ -1,20 +1,14 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { LayoutModule } from '@angular/cdk/layout';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
-import { MatMenuModule } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 
 import { HeroAddressFormComponent } from './hero-address-form/hero-address-form.component';
@@ -28,10 +22,7 @@ import { HeroesRoutingModule } from './heroes-routing.module';
   imports: [
     CommonModule,
     FormsModule,
-    HeroesRoutingModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
+    ReactiveFormsModule,
     MatListModule,
     MatBadgeModule,
     MatIconModule,
@@ -39,12 +30,9 @@ import { HeroesRoutingModule } from './heroes-routing.module';
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
-    ReactiveFormsModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatGridListModule,
-    MatMenuModule,
+    MatInputModule,
+    MatButtonModule,
+    HeroesRoutingModule,
   ],
   declarations: [
     HeroListComponent,

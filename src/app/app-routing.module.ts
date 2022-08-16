@@ -7,7 +7,7 @@ import {
   UrlSegment,
 } from '@angular/router';
 
-import { CrisisListComponent } from './crisis-list/crisis-list.component';
+import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { NewDashComponent } from './new-dash/new-dash.component';
@@ -23,7 +23,6 @@ const routes: Routes = [
     component: NewDashComponent,
   },
   { path: 'directives', title: 'Directives', component: DirectivesComponent },
-  { path: 'crisis-list', title: 'Crisis List', component: CrisisListComponent },
   {
     matcher: (url) => {
       if (url.length === 1 && url[0].path.match(/^@\w+$/gm)) {
@@ -39,6 +38,12 @@ const routes: Routes = [
     },
     title: 'Profile',
     component: ProfileComponent,
+  },
+  {
+    path: 'compose',
+    title: 'Compose Message',
+    component: ComposeMessageComponent,
+    outlet: 'popup',
   },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: '**', title: 'Page Not Found', component: PageNotFoundComponent },
