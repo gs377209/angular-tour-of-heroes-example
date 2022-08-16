@@ -36,6 +36,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
+import { AdminModule } from './admin/admin.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
@@ -108,6 +109,7 @@ import { environment } from '../environments/environment';
     }),
     HeroesModule,
     CrisisCenterModule,
+    AdminModule,
     AppRoutingModule,
   ],
   providers: [ScreenTrackingService, UserTrackingService],

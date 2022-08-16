@@ -12,65 +12,79 @@
       <a
         mat-list-item
         routerLink="/dashboard"
-        routerLinkActive="mat-accent"
+        routerLinkActive="selected"
         ariaCurrentWhenActive="page"
         >Dashboard</a
       >
       <a
         mat-list-item
         routerLink="/@Angular"
-        routerLinkActive="mat-accent"
+        routerLinkActive="selected"
         ariaCurrentWhenActive="page"
         >My Profile</a
       >
       <a
         mat-list-item
         routerLink="/crisis-center"
-        routerLinkActive="mat-accent"
+        routerLinkActive="selected"
         ariaCurrentWhenActive="page"
         >Crisis Center</a
       >
       <a
         mat-list-item
         routerLink="/heroes"
-        routerLinkActive="mat-accent"
+        routerLinkActive="selected"
         ariaCurrentWhenActive="page"
         >Heroes</a
       >
       <a
         mat-list-item
         routerLink="/shipping-address-form"
-        routerLinkActive="mat-accent"
+        routerLinkActive="selected"
         ariaCurrentWhenActive="page"
         >Shipping Address Form</a
       >
       <a
         mat-list-item
         routerLink="/fun-dashboard-example"
-        routerLinkActive="mat-accent"
+        routerLinkActive="selected"
         ariaCurrentWhenActive="page"
         >Fun Dashboard Example</a
       >
       <a
         mat-list-item
         routerLink="/directives"
-        routerLinkActive="mat-accent"
+        routerLinkActive="selected"
         ariaCurrentWhenActive="page"
         >Directives</a
       >
       <a
         mat-list-item
         routerLink="/hero-form"
-        routerLinkActive="mat-accent"
+        routerLinkActive="selected"
         ariaCurrentWhenActive="page"
         >Hero Form</a
       >
       <a
         mat-list-item
         [routerLink]="[{ outlets: { popup: ['compose'] } }]"
-        routerLinkActive="mat-accent"
+        routerLinkActive="selected"
         ariaCurrentWhenActive="page"
         >Contact</a
+      >
+      <a
+        mat-list-item
+        routerLink="/admin"
+        routerLinkActive="selected"
+        ariaCurrentWhenActive="page"
+        >Admin</a
+      >
+      <a
+        mat-list-item
+        routerLink="/login"
+        routerLinkActive="selected"
+        ariaCurrentWhenActive="page"
+        >Login</a
       >
     </mat-nav-list>
   </mat-sidenav>

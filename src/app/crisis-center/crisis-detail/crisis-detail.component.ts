@@ -1,25 +1,40 @@
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Observable, switchMap } from 'rxjs';
 import { Location } from '@angular/common';
+import { Observable } from 'rxjs';
 
+import { CanComponentDeactivate } from 'src/app/can-deactivate.guard';
 import { Crisis } from '../crisis';
 import { CrisisService } from '../crisis.service';
+import { DialogService } from 'src/app/dialog.service';
 
 @Component({
   selector: 'app-crisis-detail',
   templateUrl: './crisis-detail.component.html',
   styleUrls: ['./crisis-detail.component.scss'],
 })
-export class CrisisDetailComponent implements OnInit {
+export class CrisisDetailComponent implements OnInit, CanComponentDeactivate {
   crisis$!: Observable<Crisis>;
+  crisis!: Crisis;
+  editName: string | undefined;
 
   constructor(
     private route: ActivatedRoute,
     private crisisService: CrisisService,
     private location: Location,
-    private router: Router
+    private router: Router,
+    private dialogService: DialogService
   ) {}
+
+  canDeactivate(): Observable<boolean> | boolean {
+    // Allow synchronous navigation (`true`) if no crisis or the crisis is unchanged
+    if (!this.crisis || this.crisis.name === this.editName) {
+      return true;
+    }
+    // Otherwise ask the user with the dialog service and return its
+    // observable which resolves to true or false when the user decides
+    return this.dialogService.confirm('Discard changes?');
+  }
 
   ngOnInit(): void {
     this.getCrisis();
@@ -32,15 +47,29 @@ export class CrisisDetailComponent implements OnInit {
     // old way of doing things:
     // this.crisisService.getCrisis(id).subscribe((crisis) => (this.crisis = crisis));
 
-    this.crisis$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
-        this.crisisService.getCrisis(parseInt(params.get('id') ?? '', 10))
-      )
-    );
+    // moved this to route resolver:
+    // this.crisis$ = this.route.paramMap.pipe(
+    //   switchMap((params: ParamMap) =>
+    //     this.crisisService.getCrisis(parseInt(params.get('id') ?? '', 10))
+    //   )
+    // );
+    // this.crisis$.subscribe((c) => {
+    //   this.crisis = c;
+    //   this.editName = c.name;
+    // });
+
+    this.route.data.subscribe((data) => {
+      const crisis: Crisis = data['crisis'];
+      this.editName = crisis.name;
+      this.crisis = crisis;
+    });
   }
 
-  goBack(): void {
-    this.location.back();
+  goBack(crisis: Crisis): void {
+    // old way of navigating:
+    // this.location.back();
+    this.editName = crisis.name;
+    this.gotoCrises(crisis);
   }
 
   gotoCrises(crisis: Crisis) {
@@ -59,7 +88,10 @@ export class CrisisDetailComponent implements OnInit {
     // if (this.crisis) {
     //   this.crisisService.updateCrisis(this.crisis).subscribe(() => this.goBack());
     // }
+
     if (crisis) {
+      this.crisis = crisis;
+      this.editName = crisis.name;
       this.crisisService
         .updateCrisis(crisis)
         .subscribe(() => this.gotoCrises(crisis));

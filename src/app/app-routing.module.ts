@@ -66,8 +66,8 @@ export class TemplatePageTitleStrategy extends TitleStrategy {
 @NgModule({
   imports: [
     RouterModule.forRoot(
-      routes,
-      { enableTracing: true } // <-- debugging purposes only
+      routes
+      // { enableTracing: true } // <-- debugging purposes only
     ),
   ],
   exports: [RouterModule],
