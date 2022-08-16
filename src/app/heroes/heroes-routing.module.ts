@@ -10,8 +10,14 @@ const routes: Routes = [
     path: 'heroes',
     title: 'Heroes',
     component: HeroListComponent,
+    data: { animation: 'heroes' },
   },
-  { path: 'hero/:id', title: 'Hero Detail', component: HeroDetailComponent },
+  {
+    path: 'hero/:id',
+    title: 'Hero Detail',
+    component: HeroDetailComponent,
+    data: { animation: 'hero' },
+  },
   {
     path: 'shipping-address-form',
     title: 'Shipping Address Form',

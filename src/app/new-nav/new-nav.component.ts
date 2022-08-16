@@ -1,12 +1,16 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map, shareReplay } from 'rxjs/operators';
+import { ChildrenOutletContexts } from '@angular/router';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+
+import { slideInAnimation } from '../animations';
 
 @Component({
   selector: 'app-new-nav',
   templateUrl: './new-nav.component.html',
   styleUrls: ['./new-nav.component.scss'],
+  animations: [slideInAnimation],
 })
 export class NewNavComponent {
   isHandset$: Observable<boolean> = this.breakpointObserver
@@ -16,5 +20,14 @@ export class NewNavComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private contexts: ChildrenOutletContexts
+  ) {}
+
+  getAnimationData() {
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
+      'animation'
+    ];
+  }
 }

@@ -82,7 +82,9 @@
     </mat-toolbar>
     <!-- Add Content Here -->
     <main>
-      <router-outlet></router-outlet>
+      <div [@routeAnimation]="getAnimationData()">
+        <router-outlet></router-outlet>
+      </div>
       <app-messages></app-messages>
     </main>
   </mat-sidenav-content>
