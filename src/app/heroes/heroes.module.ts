@@ -53,5 +53,6 @@ import { HeroesRoutingModule } from './heroes-routing.module';
     HeroFormComponent,
     HeroSearchComponent,
   ],
+  exports: [HeroSearchComponent],
 })
 export class HeroesModule {}
