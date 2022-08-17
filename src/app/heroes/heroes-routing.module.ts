@@ -1,31 +1,37 @@
 import { RouterModule, Routes } from '@angular/router';
-import { HeroAddressFormComponent } from './hero-address-form/hero-address-form.component';
+import { NgModule } from '@angular/core';
+
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
-import { NgModule } from '@angular/core';
+import { HeroesComponent } from './heroes/heroes.component';
 
 const routes: Routes = [
-  { path: 'heroes', redirectTo: '/superheroes' },
-  { path: 'hero/:id', redirectTo: '/superhero/:id' },
   {
-    path: 'superheroes',
+    path: '',
     title: 'Heroes',
-    component: HeroListComponent,
-    data: { animation: 'heroes' },
+    component: HeroesComponent,
+    children: [
+      { path: 'dashboard', title: 'Dashboard', component: DashboardComponent },
+      { path: 'hero-form', title: 'Hero Form', component: HeroFormComponent },
+
+      {
+        path: '',
+        title: 'Heroes',
+        component: HeroListComponent,
+        data: { animation: 'heroes' },
+      },
+      {
+        path: ':id',
+        title: 'Hero Detail',
+        component: HeroDetailComponent,
+        data: { animation: 'hero' },
+      },
+      { path: 'heroes', redirectTo: '/superheroes' },
+      { path: 'hero/:id', redirectTo: '/:id' },
+    ],
   },
-  {
-    path: 'superhero/:id',
-    title: 'Hero Detail',
-    component: HeroDetailComponent,
-    data: { animation: 'hero' },
-  },
-  {
-    path: 'shipping-address-form',
-    title: 'Shipping Address Form',
-    component: HeroAddressFormComponent,
-  },
-  { path: 'hero-form', title: 'Hero Form', component: HeroFormComponent },
 ];
 
 @NgModule({

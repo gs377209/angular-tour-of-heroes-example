@@ -25,9 +25,7 @@ export class LoginComponent {
     this.authService.login().subscribe(() => {
       this.message = this.getMessage();
       if (this.authService.isLoggedIn) {
-        // Usually you would use the redirect URL from the auth service.
-        // However to keep the example simple, we will always redirect to `/admin`.
-        const redirectUrl = '/admin';
+        const redirectUrl = this.authService.redirectUrl;
 
         // Set our navigation extras object
         // that passes on our global query params and fragment

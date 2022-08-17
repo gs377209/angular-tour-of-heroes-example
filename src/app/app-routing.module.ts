@@ -4,48 +4,26 @@ import {
   RouterStateSnapshot,
   Routes,
   TitleStrategy,
-  UrlSegment,
 } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 import { AuthGuard } from './auth/auth.guard';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DirectivesComponent } from './directives/directives.component';
-import { NewDashComponent } from './new-dash/new-dash.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProfileComponent } from './profile/profile.component';
 import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
 
 const routes: Routes = [
-  { path: 'dashboard', title: 'Dashboard', component: DashboardComponent },
-  {
-    path: 'fun-dashboard-example',
-    title: 'Fun Dashboard',
-    component: NewDashComponent,
-  },
-  { path: 'directives', title: 'Directives', component: DirectivesComponent },
-  {
-    matcher: (url) => {
-      if (url.length === 1 && url[0].path.match(/^@\w+$/gm)) {
-        return {
-          consumed: url,
-          posParams: {
-            username: new UrlSegment(url[0].path.slice(1), {}),
-          },
-        };
-      }
-
-      return null;
-    },
-    title: 'Profile',
-    component: ProfileComponent,
-  },
   {
     path: 'compose',
     title: 'Compose Message',
     component: ComposeMessageComponent,
     outlet: 'popup',
+  },
+  {
+    path: 'superheroes',
+    loadChildren: () =>
+      import('./heroes/heroes.module').then((m) => m.HeroesModule),
+    data: { preload: true },
   },
   {
     path: 'crisis-center',
@@ -56,12 +34,20 @@ const routes: Routes = [
     data: { preload: true },
   },
   {
+    path: 'one-off-items',
+    loadChildren: () =>
+      import('./one-off-items/one-off-items.module').then(
+        (m) => m.OneOffItemsModule
+      ),
+    data: { preload: true },
+  },
+  {
     path: 'admin',
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
     canLoad: [AuthGuard],
   },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'superheroes/dashboard', pathMatch: 'full' },
   { path: '**', title: 'Page Not Found', component: PageNotFoundComponent },
 ];
 

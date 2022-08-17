@@ -7,15 +7,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { HeroAddressFormComponent } from './hero-address-form.component';
+import { AddressFormComponent } from './address-form.component';
 
-describe('HeroAddressFormComponent', () => {
-  let component: HeroAddressFormComponent;
-  let fixture: ComponentFixture<HeroAddressFormComponent>;
+describe('AddressFormComponent', () => {
+  let component: AddressFormComponent;
+  let fixture: ComponentFixture<AddressFormComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [HeroAddressFormComponent],
+      declarations: [AddressFormComponent],
       imports: [
         NoopAnimationsModule,
         ReactiveFormsModule,
@@ -29,7 +29,7 @@ describe('HeroAddressFormComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeroAddressFormComponent);
+    fixture = TestBed.createComponent(AddressFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 import { slideInAnimation } from '../animations';
 
 @Component({
-  selector: 'app-new-nav',
-  templateUrl: './new-nav.component.html',
-  styleUrls: ['./new-nav.component.scss'],
+  selector: 'app-nav',
+  templateUrl: './nav.component.html',
+  styleUrls: ['./nav.component.scss'],
   animations: [slideInAnimation],
 })
-export class NewNavComponent {
+export class NavComponent {
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(

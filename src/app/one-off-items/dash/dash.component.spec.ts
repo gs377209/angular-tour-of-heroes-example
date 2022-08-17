@@ -7,15 +7,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { NewDashComponent } from './new-dash.component';
+import { DashComponent } from './dash.component';
 
-describe('NewDashComponent', () => {
-  let component: NewDashComponent;
-  let fixture: ComponentFixture<NewDashComponent>;
+describe('DashComponent', () => {
+  let component: DashComponent;
+  let fixture: ComponentFixture<DashComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [NewDashComponent],
+      declarations: [DashComponent],
       imports: [
         NoopAnimationsModule,
         LayoutModule,
@@ -29,7 +29,7 @@ describe('NewDashComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewDashComponent);
+    fixture = TestBed.createComponent(DashComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

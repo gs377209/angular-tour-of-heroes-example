@@ -1,16 +1,11 @@
-<form *ngIf="crisis$ | async as crisis">
+<form *ngIf="crisis">
   <mat-card>
     <mat-card-title>{{ crisis.name | uppercase }} Details</mat-card-title>
     <mat-card-subtitle>ID: {{ crisis.id }}</mat-card-subtitle>
     <mat-card-content>
       <mat-form-field appearance="fill">
         <mat-label>Crisis name: </mat-label>
-        <input
-          matInput
-          [(ngModel)]="crisis.name"
-          placeholder="name"
-          name="name"
-        />
+        <input matInput [(ngModel)]="editName" placeholder="name" name="name" />
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>

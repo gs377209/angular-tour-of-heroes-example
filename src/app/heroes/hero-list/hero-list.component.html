@@ -1,9 +1,5 @@
 <h2>My Heroes</h2>
 
-<a mat-raised-button color="accent" routerLink="/sidekicks">
-  Go to sidekicks
-</a>
-
 <form>
   <mat-card>
     <mat-card-title>Add Hero</mat-card-title>
@@ -40,7 +36,7 @@
           [matBadge]="hero.id"
           matBadgePosition="before"
           matBadgeColor="accent"
-          [routerLink]="['/superhero', hero.id]"
+          [routerLink]="['/superheroes', hero.id]"
           [class.selected]="hero.id === selectedId"
         >
           {{ hero.name }}
@@ -59,4 +55,9 @@
       </mat-list-item>
     </mat-list>
   </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="accent" routerLink="/sidekicks">
+      Go to sidekicks
+    </a>
+  </mat-card-actions>
 </mat-card>

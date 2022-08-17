@@ -40,33 +40,20 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DirectivesComponent } from './directives/directives.component';
-import { HeroesModule } from './heroes/heroes.module';
-import { HighlightDirective } from './highlight.directive';
 import { InMemoryDataService } from './in-memory-data.service';
 import { MessagesComponent } from './messages/messages.component';
-import { NewDashComponent } from './new-dash/new-dash.component';
-import { NewNavComponent } from './new-nav/new-nav.component';
+import { NavComponent } from './nav/nav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProfileComponent } from './profile/profile.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { UnlessDirective } from './unless.directive';
 import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessagesComponent,
-    DashboardComponent,
-    NewNavComponent,
-    NewDashComponent,
-    HighlightDirective,
-    DirectivesComponent,
-    UnlessDirective,
     PageNotFoundComponent,
-    ProfileComponent,
     ComposeMessageComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
@@ -106,7 +93,6 @@ import { environment } from '../environments/environment';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
-    HeroesModule,
     AuthModule,
     AppRoutingModule,
   ],

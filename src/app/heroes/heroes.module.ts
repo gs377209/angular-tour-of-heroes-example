@@ -11,11 +11,12 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { NgModule } from '@angular/core';
 
-import { HeroAddressFormComponent } from './hero-address-form/hero-address-form.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { HeroesComponent } from './heroes/heroes.component';
 import { HeroesRoutingModule } from './heroes-routing.module';
 
 @NgModule({
@@ -37,9 +38,10 @@ import { HeroesRoutingModule } from './heroes-routing.module';
   declarations: [
     HeroListComponent,
     HeroDetailComponent,
-    HeroAddressFormComponent,
     HeroFormComponent,
     HeroSearchComponent,
+    DashboardComponent,
+    HeroesComponent,
   ],
   exports: [HeroSearchComponent],
 })

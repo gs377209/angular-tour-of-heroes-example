@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { asyncData } from 'src/testing/async-observable-helpers';
 
 import { DashboardComponent } from './dashboard.component';
-import { HeroService } from '../heroes/hero.service';
+import { HeroService } from '../hero.service';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;

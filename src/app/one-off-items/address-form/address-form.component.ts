@@ -2,11 +2,11 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-hero-address-form',
-  templateUrl: './hero-address-form.component.html',
-  styleUrls: ['./hero-address-form.component.scss'],
+  selector: 'app-address-form',
+  templateUrl: './address-form.component.html',
+  styleUrls: ['./address-form.component.scss'],
 })
-export class HeroAddressFormComponent {
+export class AddressFormComponent {
   addressForm = this.fb.group({
     company: null,
     firstName: [null, Validators.required],

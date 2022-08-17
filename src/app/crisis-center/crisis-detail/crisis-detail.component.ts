@@ -14,9 +14,8 @@ import { DialogService } from 'src/app/dialog.service';
   styleUrls: ['./crisis-detail.component.scss'],
 })
 export class CrisisDetailComponent implements OnInit, CanComponentDeactivate {
-  crisis$!: Observable<Crisis>;
   crisis!: Crisis;
-  editName: string | undefined;
+  editName = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -68,7 +67,6 @@ export class CrisisDetailComponent implements OnInit, CanComponentDeactivate {
   goBack(crisis: Crisis): void {
     // old way of navigating:
     // this.location.back();
-    this.editName = crisis.name;
     this.gotoCrises(crisis);
   }
 
@@ -91,7 +89,7 @@ export class CrisisDetailComponent implements OnInit, CanComponentDeactivate {
 
     if (crisis) {
       this.crisis = crisis;
-      this.editName = crisis.name;
+      this.crisis.name = this.editName;
       this.crisisService
         .updateCrisis(crisis)
         .subscribe(() => this.gotoCrises(crisis));
