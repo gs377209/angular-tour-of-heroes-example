@@ -16,7 +16,12 @@ describe('CrisisDetailComponent', () => {
   beforeEach(async () => {
     expectedCrisis = { id: 1, name: 'Test Crisis' };
 
-    const activatedRoute = new ActivatedRouteStub({ id: expectedCrisis.id });
+    const activatedRoute = new ActivatedRouteStub(
+      undefined,
+      undefined,
+      undefined,
+      { crisis: expectedCrisis }
+    );
     const crisisService = jasmine.createSpyObj('CrisisService', ['getCrisis']);
     crisisService.getCrisis.and.returnValue(asyncData(expectedCrisis));
 
