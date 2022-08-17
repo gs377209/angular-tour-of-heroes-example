@@ -36,11 +36,10 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { AdminModule } from './admin/admin.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthModule } from './auth/auth.module';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
-import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { HeroesModule } from './heroes/heroes.module';
@@ -108,8 +107,7 @@ import { environment } from '../environments/environment';
       registrationStrategy: 'registerWhenStable:30000',
     }),
     HeroesModule,
-    CrisisCenterModule,
-    AdminModule,
+    AuthModule,
     AppRoutingModule,
   ],
   providers: [ScreenTrackingService, UserTrackingService],

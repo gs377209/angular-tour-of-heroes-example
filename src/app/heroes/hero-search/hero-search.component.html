@@ -22,7 +22,7 @@
       <mat-option
         *ngFor="let hero of heroes$ | async"
         [value]="hero"
-        routerLink="/hero/{{ hero.id }}"
+        routerLink="/superhero/{{ hero.id }}"
       >
         {{ hero.name }}
       </mat-option>

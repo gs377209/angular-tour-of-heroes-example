@@ -6,14 +6,16 @@ import {
   TitleStrategy,
   UrlSegment,
 } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
+import { AuthGuard } from './auth/auth.guard';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { NewDashComponent } from './new-dash/new-dash.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProfileComponent } from './profile/profile.component';
-import { Title } from '@angular/platform-browser';
+import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
 
 const routes: Routes = [
   { path: 'dashboard', title: 'Dashboard', component: DashboardComponent },
@@ -45,6 +47,20 @@ const routes: Routes = [
     component: ComposeMessageComponent,
     outlet: 'popup',
   },
+  {
+    path: 'crisis-center',
+    loadChildren: () =>
+      import('./crisis-center/crisis-center.module').then(
+        (m) => m.CrisisCenterModule
+      ),
+    data: { preload: true },
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+    canLoad: [AuthGuard],
+  },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: '**', title: 'Page Not Found', component: PageNotFoundComponent },
 ];
@@ -59,16 +75,18 @@ export class TemplatePageTitleStrategy extends TitleStrategy {
     const title = this.buildTitle(routerState);
     if (title !== undefined) {
       this.title.setTitle(`Angular Tour of Heroes Example | ${title}`);
+    } else {
+      this.title.setTitle('Angular Tour of Heroes Example');
     }
   }
 }
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(
-      routes
-      // { enableTracing: true } // <-- debugging purposes only
-    ),
+    RouterModule.forRoot(routes, {
+      // enableTracing: true, // <-- debugging purposes only
+      preloadingStrategy: SelectivePreloadingStrategyService,
+    }),
   ],
   exports: [RouterModule],
   providers: [{ provide: TitleStrategy, useClass: TemplatePageTitleStrategy }],

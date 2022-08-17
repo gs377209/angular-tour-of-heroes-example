@@ -4,13 +4,12 @@ import { NgModule } from '@angular/core';
 import { AdminComponent } from './admin/admin.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AuthGuard } from '../auth/auth.guard';
-import { LoginComponent } from '../auth/login/login.component';
 import { ManageCrisesComponent } from './manage-crises/manage-crises.component';
 import { ManageHeroesComponent } from './manage-heroes/manage-heroes.component';
 
 const routes: Routes = [
   {
-    path: 'admin',
+    path: '',
     component: AdminComponent,
     // alternate:
     // canMatch: [AuthGuard],
@@ -26,10 +25,6 @@ const routes: Routes = [
         ],
       },
     ],
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
   },
 ];
 

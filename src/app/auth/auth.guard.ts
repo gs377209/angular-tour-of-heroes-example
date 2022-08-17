@@ -2,6 +2,7 @@ import {
   ActivatedRouteSnapshot,
   CanActivate,
   CanActivateChild,
+  CanLoad,
   CanMatch,
   NavigationExtras,
   Route,
@@ -16,7 +17,9 @@ import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate, CanActivateChild, CanMatch {
+export class AuthGuard
+  implements CanActivate, CanActivateChild, CanMatch, CanLoad
+{
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(
@@ -38,6 +41,12 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanMatch {
   canMatch(route: Route) {
     const url = `/${route.path}`;
     return this.checkLogin(url) === true;
+  }
+
+  canLoad(route: Route) {
+    const url = `/${route.path}`;
+
+    return this.checkLogin(url);
   }
 
   checkLogin(url: string): true | UrlTree {

@@ -20,12 +20,6 @@ export class CanDeactivateGuard
     | boolean
     | UrlTree {
     // component-specific:
-    // Get the Crisis Center ID
-    // console.log(route.paramMap.get('id'));
-
-    // // Get the current URL
-    // console.log(state.url);
-
     // // Allow synchronous navigation (`true`) if no crisis or the crisis is unchanged
     // if (!component.crisis || component.crisis.name === component.editName) {
     //   return true;

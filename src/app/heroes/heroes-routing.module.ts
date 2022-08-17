@@ -6,14 +6,16 @@ import { HeroListComponent } from './hero-list/hero-list.component';
 import { NgModule } from '@angular/core';
 
 const routes: Routes = [
+  { path: 'heroes', redirectTo: '/superheroes' },
+  { path: 'hero/:id', redirectTo: '/superhero/:id' },
   {
-    path: 'heroes',
+    path: 'superheroes',
     title: 'Heroes',
     component: HeroListComponent,
     data: { animation: 'heroes' },
   },
   {
-    path: 'hero/:id',
+    path: 'superhero/:id',
     title: 'Hero Detail',
     component: HeroDetailComponent,
     data: { animation: 'hero' },
