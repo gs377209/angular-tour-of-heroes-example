@@ -39,7 +39,6 @@ const routes: Routes = [
       import('./one-off-items/one-off-items.module').then(
         (m) => m.OneOffItemsModule
       ),
-    data: { preload: true },
   },
   {
     path: 'admin',
