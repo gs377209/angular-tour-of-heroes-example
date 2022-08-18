@@ -4,4 +4,9 @@
 
 mat-nav-list {
   display: flex;
+  flex-flow: row wrap;
+
+  > a {
+    width: auto;
+  }
 }

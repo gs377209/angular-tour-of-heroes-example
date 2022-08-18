@@ -23,6 +23,9 @@ import { DashComponent } from './dash/dash.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { DynamicFormExampleComponent } from './dynamic-form-example/dynamic-form-example.component';
+import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-form-question.component';
 import { HighlightDirective } from './highlight.directive';
 import { OneOffItemsComponent } from './one-off-items/one-off-items.component';
 import { OneOffItemsRoutingModule } from './one-off-items-routing.module';
@@ -41,6 +44,9 @@ import { UnlessDirective } from './unless.directive';
     TableComponent,
     TreeComponent,
     DragDropComponent,
+    DynamicFormQuestionComponent,
+    DynamicFormComponent,
+    DynamicFormExampleComponent,
   ],
   imports: [
     CommonModule,
