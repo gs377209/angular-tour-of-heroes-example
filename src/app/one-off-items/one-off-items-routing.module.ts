@@ -4,7 +4,10 @@ import { NgModule } from '@angular/core';
 import { AddressFormComponent } from './address-form/address-form.component';
 import { DashComponent } from './dash/dash.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { DragDropComponent } from './drag-drop/drag-drop.component';
 import { OneOffItemsComponent } from './one-off-items/one-off-items.component';
+import { TableComponent } from './table/table.component';
+import { TreeComponent } from './tree/tree.component';
 
 const routes: Routes = [
   {
@@ -26,6 +29,21 @@ const routes: Routes = [
         path: 'directives',
         title: 'Directives',
         component: DirectivesComponent,
+      },
+      {
+        path: 'table',
+        title: 'Table',
+        component: TableComponent,
+      },
+      {
+        path: 'tree',
+        title: 'Tree',
+        component: TreeComponent,
+      },
+      {
+        path: 'drag-drop',
+        title: 'Drag Drop',
+        component: DragDropComponent,
       },
     ],
   },

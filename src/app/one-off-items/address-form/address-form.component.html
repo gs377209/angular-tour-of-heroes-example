@@ -136,6 +136,33 @@
           </mat-radio-group>
         </div>
       </div>
+      <div formArrayName="aliases" class="row">
+        <div class="col">
+          <h2>Aliases</h2>
+          <button
+            mat-raised-button
+            color="accent"
+            type="button"
+            (click)="addAlias()"
+          >
+            + Add another alias
+          </button>
+
+          <div *ngFor="let alias of aliases.controls; let i = index">
+            <!-- The repeated alias template -->
+            <mat-form-field class="full-width">
+              <mat-label>Alias:</mat-label>
+              <input
+                matInput
+                placeholder="Alias"
+                id="alias-{{ i }}"
+                type="text"
+                [formControlName]="i"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary" type="submit">Submit</button>

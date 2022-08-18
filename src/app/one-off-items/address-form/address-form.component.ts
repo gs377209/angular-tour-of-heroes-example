@@ -1,4 +1,4 @@
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 
 @Component({
@@ -24,6 +24,7 @@ export class AddressFormComponent {
       ]),
     ],
     shipping: ['free', Validators.required],
+    aliases: this.fb.array([this.fb.control('')]),
   });
 
   hasUnitNumber = false;
@@ -93,6 +94,14 @@ export class AddressFormComponent {
   constructor(private fb: FormBuilder) {}
 
   onSubmit(): void {
-    alert('Thanks!');
+    alert(`Thanks! ${JSON.stringify(this.addressForm.value)}`);
+  }
+
+  get aliases() {
+    return this.addressForm.get('aliases') as FormArray;
+  }
+
+  addAlias() {
+    this.aliases.push(this.fb.control(''));
   }
 }
