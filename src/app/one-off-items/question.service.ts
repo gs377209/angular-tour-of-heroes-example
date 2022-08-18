@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 
-import { DropdownQuestion } from './question-dropdown';
 import { QuestionBase } from './question-base';
-import { TextboxQuestion } from './question-textbox';
+import { QuestionDropdown } from './question-dropdown';
+import { QuestionTextbox } from './question-textbox';
 
 @Injectable()
 export class QuestionService {
   // TODO: get from a remote source of question metadata
   getQuestions() {
     const questions: QuestionBase<string>[] = [
-      new DropdownQuestion({
+      new QuestionDropdown({
         key: 'brave',
         label: 'Bravery Rating',
         options: [
@@ -22,7 +22,7 @@ export class QuestionService {
         order: 3,
       }),
 
-      new TextboxQuestion({
+      new QuestionTextbox({
         key: 'firstName',
         label: 'First name',
         value: 'Bombasto',
@@ -30,7 +30,7 @@ export class QuestionService {
         order: 1,
       }),
 
-      new TextboxQuestion({
+      new QuestionTextbox({
         key: 'emailAddress',
         label: 'Email',
         type: 'email',

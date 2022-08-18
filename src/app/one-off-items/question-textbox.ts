@@ -1,5 +1,5 @@
 import { QuestionBase } from './question-base';
 
-export class TextboxQuestion extends QuestionBase<string> {
+export class QuestionTextbox extends QuestionBase<string> {
   override controlType = 'textbox';
 }
