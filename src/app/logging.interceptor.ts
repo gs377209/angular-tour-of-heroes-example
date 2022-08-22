@@ -28,7 +28,7 @@ export class LoggingInterceptor implements HttpInterceptor {
         next: (event) =>
           (ok = event instanceof HttpResponse ? 'succeeded' : ''),
         // Operation failed; error is an HttpErrorResponse
-        error: (error) => (ok = 'failed'),
+        error: () => (ok = 'failed'),
       }),
       // Log when response observable either completes or errors
       finalize(() => {

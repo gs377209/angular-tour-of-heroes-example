@@ -24,6 +24,7 @@ export class AuthService {
   }
 
   getAuthorizationToken() {
+    // this is not used in any real way at the moment
     return 'dummy-token';
   }
 }
