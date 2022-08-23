@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { asyncData } from 'src/testing/async-observable-helpers';
+import { cold, getTestScheduler } from 'jasmine-marbles';
 
 import { DashboardComponent } from './dashboard.component';
 import { HeroService } from '../hero.service';
@@ -10,7 +10,8 @@ describe('DashboardComponent', () => {
 
   beforeEach(async () => {
     const heroService = jasmine.createSpyObj('HeroService', ['getHeroes']);
-    heroService.getHeroes.and.returnValue(asyncData([]));
+    const h$ = cold('---x|', { x: [] });
+    heroService.getHeroes.and.returnValue(h$);
 
     await TestBed.configureTestingModule({
       declarations: [DashboardComponent],
@@ -19,6 +20,8 @@ describe('DashboardComponent', () => {
 
     fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
+    getTestScheduler().flush();
     fixture.detectChanges();
   });
 

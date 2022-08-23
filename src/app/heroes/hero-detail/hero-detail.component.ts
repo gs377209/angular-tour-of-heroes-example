@@ -33,9 +33,9 @@ export class HeroDetailComponent implements OnInit {
     // this.heroService.getHero(id).subscribe((hero) => (this.hero = hero));
 
     this.hero$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
-        this.heroService.getHero(parseInt(params.get('id') ?? '', 10))
-      )
+      switchMap((params: ParamMap) => {
+        return this.heroService.getHero(parseInt(params.get('id') ?? '', 10));
+      })
     );
   }
 
@@ -56,7 +56,9 @@ export class HeroDetailComponent implements OnInit {
     // if (this.hero) {
     //   this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
     // }
+    console.log('trying to save');
     if (hero) {
+      console.log('saving');
       this.heroService.updateHero(hero).subscribe(() => this.gotoHeroes(hero));
     }
   }

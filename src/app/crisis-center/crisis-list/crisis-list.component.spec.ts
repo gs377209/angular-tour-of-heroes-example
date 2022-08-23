@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { cold, getTestScheduler } from 'jasmine-marbles';
 import { ActivatedRoute } from '@angular/router';
 
 import { ActivatedRouteStub } from 'src/testing/activated-route-stub';
-import { asyncData } from 'src/testing/async-observable-helpers';
 
 import { CrisisListComponent } from './crisis-list.component';
 import { CrisisService } from '../crisis.service';
@@ -13,7 +13,8 @@ describe('CrisesComponent', () => {
 
   beforeEach(async () => {
     const crisisService = jasmine.createSpyObj('CrisisService', ['getCrises']);
-    crisisService.getCrises.and.returnValue(asyncData([]));
+    const c$ = cold('---x|', { x: [] });
+    crisisService.getCrises.and.returnValue(c$);
     const activatedRoute = new ActivatedRouteStub({ id: '1' });
 
     await TestBed.configureTestingModule({
@@ -26,6 +27,8 @@ describe('CrisesComponent', () => {
 
     fixture = TestBed.createComponent(CrisisListComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
+    getTestScheduler().flush();
     fixture.detectChanges();
   });
 

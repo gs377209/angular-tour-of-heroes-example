@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { cold, getTestScheduler } from 'jasmine-marbles';
 import { ActivatedRoute } from '@angular/router';
 
 import { ActivatedRouteStub } from 'src/testing/activated-route-stub';
-import { asyncData } from 'src/testing/async-observable-helpers';
 
 import { HeroListComponent } from './hero-list.component';
 import { HeroService } from '../hero.service';
@@ -13,7 +13,8 @@ describe('HeroesComponent', () => {
 
   beforeEach(async () => {
     const heroService = jasmine.createSpyObj('HeroService', ['getHeroes']);
-    heroService.getHeroes.and.returnValue(asyncData([]));
+    const h$ = cold('---x|', { x: [] });
+    heroService.getHeroes.and.returnValue(h$);
     const activatedRoute = new ActivatedRouteStub({ id: '1' });
 
     await TestBed.configureTestingModule({
@@ -26,6 +27,8 @@ describe('HeroesComponent', () => {
 
     fixture = TestBed.createComponent(HeroListComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
+    getTestScheduler().flush();
     fixture.detectChanges();
   });
 

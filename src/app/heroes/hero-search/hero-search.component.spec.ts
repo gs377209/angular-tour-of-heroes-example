@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { cold, getTestScheduler } from 'jasmine-marbles';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { asyncData } from 'src/testing/async-observable-helpers';
 
 import { HeroSearchComponent } from './hero-search.component';
 import { HeroService } from '../hero.service';
@@ -11,7 +11,8 @@ describe('HeroSearchComponent', () => {
 
   beforeEach(async () => {
     const heroService = jasmine.createSpyObj('HeroService', ['getHeroes']);
-    heroService.getHeroes.and.returnValue(asyncData([]));
+    const h$ = cold('---x|', { x: [] });
+    heroService.getHeroes.and.returnValue(h$);
 
     await TestBed.configureTestingModule({
       imports: [MatAutocompleteModule],
@@ -22,6 +23,8 @@ describe('HeroSearchComponent', () => {
     fixture = TestBed.createComponent(HeroSearchComponent);
 
     component = fixture.componentInstance;
+    fixture.detectChanges();
+    getTestScheduler().flush();
     fixture.detectChanges();
   });
 
