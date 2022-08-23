@@ -1,6 +1,6 @@
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Observable, switchMap } from 'rxjs';
+import { Observable, last, of, switchMap, tap } from 'rxjs';
 import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
@@ -33,17 +33,27 @@ export class HeroDetailComponent implements OnInit {
     // this.heroService.getHero(id).subscribe((hero) => (this.hero = hero));
 
     this.hero$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => {
-        return this.heroService.getHero(parseInt(params.get('id') ?? '', 10));
+      switchMap((params) => {
+        if (!params.get('id')) {
+          return of({ id: 0, name: '' } as Hero);
+        } else {
+          return this.heroService.getHero(parseInt(params.get('id') ?? '', 10));
+        }
       })
     );
+
+    this.hero$.subscribe((hero) => {
+      if (!hero) {
+        this.gotoHeroes();
+      }
+    });
   }
 
   goBack(): void {
     this.location.back();
   }
 
-  gotoHeroes(hero: Hero) {
+  gotoHeroes(hero?: Hero) {
     const heroId = hero ? hero.id : null;
     // Pass along the hero id if available
     // so that the HeroList component can select that hero.
@@ -56,9 +66,7 @@ export class HeroDetailComponent implements OnInit {
     // if (this.hero) {
     //   this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
     // }
-    console.log('trying to save');
     if (hero) {
-      console.log('saving');
       this.heroService.updateHero(hero).subscribe(() => this.gotoHeroes(hero));
     }
   }

@@ -37,7 +37,7 @@ export class HeroService {
         const outcome = h ? 'fetched' : 'did not find';
         this.log(`${outcome} hero id=${id}`);
       }),
-      catchError(this.handleError<Hero>(`getHero id=${id}`))
+      catchError(this.handleError<Hero>(`getHeroNo404 id=${id}`))
     );
   }
 
