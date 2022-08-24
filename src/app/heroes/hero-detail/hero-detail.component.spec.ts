@@ -1,7 +1,11 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { cold, getTestScheduler } from 'jasmine-marbles';
+import { HarnessLoader } from '@angular/cdk/testing';
+import { MatCardHarness } from '@angular/material/card/testing';
+import { MatInputHarness } from '@angular/material/input/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 
 import { ActivatedRouteStub } from 'src/testing/activated-route-stub';
 import { click } from 'src/testing';
@@ -13,11 +17,13 @@ import { HeroesModule } from '../heroes.module';
 
 describe('HeroDetailComponent', () => {
   let activatedRoute: ActivatedRouteStub;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let heroService: any;
   let component: HeroDetailComponent;
   let fixture: ComponentFixture<HeroDetailComponent>;
   let expectedHero: Hero;
   let page: Page;
+  let loader: HarnessLoader;
 
   class Page {
     // getter properties wait to query the DOM until called.
@@ -42,6 +48,7 @@ describe('HeroDetailComponent', () => {
 
     constructor(someFixture: ComponentFixture<HeroDetailComponent>) {
       // get the navigate spy from the injected router spy object
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const routerSpy = someFixture.debugElement.injector.get(Router) as any;
       this.navigateSpy = routerSpy.navigate;
 
@@ -65,6 +72,7 @@ describe('HeroDetailComponent', () => {
     fixture = TestBed.createComponent(HeroDetailComponent);
     component = fixture.componentInstance;
     page = new Page(fixture);
+    loader = TestbedHarnessEnvironment.loader(fixture);
 
     fixture.detectChanges();
     getTestScheduler().flush();
@@ -122,6 +130,7 @@ describe('HeroDetailComponent', () => {
       // It delegates to fake `HeroService.updateHero` which delivers a safe test result.
       const heroServiceSpy = fixture.debugElement.injector.get(
         HeroService
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ) as any;
       const updateHeroSpy = heroServiceSpy.updateHero;
       const hu$ = cold('---x|', { x: expectedHero });
@@ -139,6 +148,7 @@ describe('HeroDetailComponent', () => {
     it('should navigate when click save and save resolves', () => {
       const heroServiceSpy = fixture.debugElement.injector.get(
         HeroService
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ) as any;
       const updateHeroSpy = heroServiceSpy.updateHero;
       const hu$ = cold('---x|', { x: expectedHero });
@@ -152,24 +162,29 @@ describe('HeroDetailComponent', () => {
         .toBe(true);
     });
 
-    fit('should convert hero name to Title Case', () => {
+    it('should convert hero name to Title Case', async () => {
       // get the name's input and display elements from the DOM
-      const hostElement: HTMLElement = fixture.nativeElement;
-      const nameInput: HTMLInputElement = hostElement.querySelector('input')!;
-      const nameDisplay: HTMLElement =
-        hostElement.querySelector('mat-card-title')!;
+      // const hostElement: HTMLElement = fixture.nativeElement;
+      // const nameInput: HTMLInputElement = hostElement.querySelector('input')!;
+      // const nameDisplay: HTMLElement =
+      //   hostElement.querySelector('mat-card-title')!;
+      const card = await loader.getHarness(MatCardHarness);
+      const input = await loader.getHarness(MatInputHarness);
 
       // simulate user entering a new name into the input box
-      nameInput.value = 'quick BROWN  fOx';
+      // nameInput.value = 'quick BROWN  fOx';
+      await input.setValue('quick BROWN  fOx');
 
       // Dispatch a DOM event so that Angular learns of input value change.
-      nameInput.dispatchEvent(new Event('input'));
+      // nameInput.dispatchEvent(new Event('input'));
 
       // Tell Angular to update the display binding through the title pipe
-      fixture.detectChanges();
+      // fixture.detectChanges();
 
-      expect(nameInput.value).toBe('quick BROWN  fOx');
-      expect(nameDisplay.textContent).toBe('Quick Brown  Fox Details');
+      // expect(nameInput.value).toBe('quick BROWN  fOx');
+      // expect(nameDisplay.textContent).toBe('Quick Brown  Fox Details');
+      expect(await input.getValue()).toBe('quick BROWN  fOx');
+      expect(await card.getTitleText()).toBe('Quick Brown  Fox Details');
     });
   });
 

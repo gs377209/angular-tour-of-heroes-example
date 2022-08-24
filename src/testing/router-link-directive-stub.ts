@@ -6,8 +6,8 @@ import { Directive, HostListener, Input } from '@angular/core';
 })
 // eslint-disable-next-line @angular-eslint/directive-class-suffix
 export class RouterLinkDirectiveStub {
-  @Input('routerLink') linkParams: any;
-  navigatedTo: any = null;
+  @Input('routerLink') linkParams: unknown;
+  navigatedTo: unknown = null;
 
   @HostListener('click')
   onClick() {

@@ -15,8 +15,8 @@
     "prettier": "prettier --write .",
     "prettier:check": "prettier --check .",
     "prepare": "husky install",
-    "lint": "ng lint",
-    "stylelint": "stylelint 'src/**/*.{css,scss,sass}'",
+    "lint": "ng lint --max-warnings 0",
+    "stylelint": "stylelint --max-warnings 0 'src/**/*.{css,scss,sass}'",
     "preversion": "npm run test:ci",
     "version": "npm run build && git add .",
     "postversion": "git push && git push --tags && rm -rf build/temp && rm -rf dist"
@@ -73,11 +73,11 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
+      "eslint --max-warnings 0 --fix",
       "prettier --write --ignore-unknown --list-different"
     ],
     "**/*.{css,scss,sass}": [
-      "stylelint --fix",
+      "stylelint --max-warnings 0 --fix",
       "prettier --write --ignore-unknown --list-different"
     ],
     "**/*": [

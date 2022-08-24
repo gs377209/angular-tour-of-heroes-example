@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Observable, last, of, switchMap, tap } from 'rxjs';
+import { Observable, of, switchMap } from 'rxjs';
 import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
@@ -34,10 +34,11 @@ export class HeroDetailComponent implements OnInit {
 
     this.hero$ = this.route.paramMap.pipe(
       switchMap((params) => {
-        if (!params.get('id')) {
+        const id = params.get('id');
+        if (!id || id === '0') {
           return of({ id: 0, name: '' } as Hero);
         } else {
-          return this.heroService.getHero(parseInt(params.get('id') ?? '', 10));
+          return this.heroService.getHero(parseInt(id, 10));
         }
       })
     );
