@@ -33,14 +33,14 @@
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7490253195531390487" datatype="html">
-        <source>Currency Hard coded to en-US: <x id="INTERPOLATION" equiv-text="{{ amount | currency: &quot;en-US&quot; }}"/>
+      <trans-unit id="1754186448563999133" datatype="html">
+        <source> Currency Hard coded to en-US: <x id="INTERPOLATION" equiv-text="{{ amount | currency: &quot;USD&quot;:&quot;symbol&quot;:undefined:&quot;en-US&quot; }}"/>
         </source>
-        <target>Devise codée en dur sur en-US: <x id="INTERPOLATION" equiv-text="{{ amount | currency: &quot;en-US&quot; }}"/>
+        <target>Devise codée en dur sur en-US: <x id="INTERPOLATION" equiv-text="{{ amount | currency: &quot;USD&quot;:&quot;symbol&quot;:undefined:&quot;en-US&quot; }}"/>
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="linenumber">21,24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1598344140393925870" datatype="html">
@@ -50,7 +50,7 @@
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5107817123392776795" datatype="html">
@@ -60,7 +60,7 @@
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="456158422862874991" datatype="html">
@@ -68,7 +68,15 @@
         <target>partie</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="392942015236586892" datatype="html">
+        <source>Angular logo</source>
+        <target>Logo angulaire</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5926175912644513271" datatype="html">
@@ -80,7 +88,7 @@
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
-          <context context-type="linenumber">28,31</context>
+          <context context-type="linenumber">31,34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2002272803511843863" datatype="html">
@@ -90,7 +98,7 @@
  minutes}}</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
-          <context context-type="linenumber">29,30</context>
+          <context context-type="linenumber">32,33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3914135716049968252" datatype="html">
@@ -100,7 +108,7 @@
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
-          <context context-type="linenumber">32,34</context>
+          <context context-type="linenumber">35,37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7670372064920373295" datatype="html">
@@ -108,7 +116,7 @@
         <target>{VAR_SELECT, select, male {un homme} female {une femme} other {autre}}</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="313334560682618967" datatype="html">
@@ -122,7 +130,7 @@
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
-          <context context-type="linenumber">35,39</context>
+          <context context-type="linenumber">38,42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2508975984005233379" datatype="html">
@@ -132,7 +140,7 @@
  minutes par {VAR_SELECT, select, male {un homme} female {une femme} other {autre}}}}</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
-          <context context-type="linenumber">36,38</context>
+          <context context-type="linenumber">39,41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2486054965799478476" datatype="html">
