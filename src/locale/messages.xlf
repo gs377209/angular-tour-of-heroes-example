@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="4895493026904779519" datatype="html">
+        <source>Internationalization Examples</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">An introduction header for this sample</note>
+        <note priority="1" from="meaning">example card header</note>
+      </trans-unit>
+      <trans-unit id="6531898240125800824" datatype="html">
+        <source>Date: <x id="INTERPOLATION" equiv-text="{{ today | date }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3560441197067907289" datatype="html">
+        <source>Currency: <x id="INTERPOLATION" equiv-text="{{ amount | currency }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7490253195531390487" datatype="html">
+        <source>Currency Hard coded to en-US: <x id="INTERPOLATION" equiv-text="{{ amount | currency: &quot;en-US&quot; }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1598344140393925870" datatype="html">
+        <source>Decimal: <x id="INTERPOLATION" equiv-text="{{ amount | number }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5107817123392776795" datatype="html">
+        <source>Percent: <x id="INTERPOLATION" equiv-text="{{ amount | percent }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="456158422862874991" datatype="html">
+        <source>part</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5926175912644513271" datatype="html">
+        <source> Updated <x id="ICU" equiv-text="{minutes, plural, =0 {just now} =1 {one minute ago} other
+      {{{minutes}} minutes ago}}" xid="1887283401472369100"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">28,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2002272803511843863" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {just now} =1 {one minute ago} other {<x id="INTERPOLATION"/> minutes ago}}</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3914135716049968252" datatype="html">
+        <source> The author is <x id="ICU" equiv-text="{gender, select, male {male} female {female} other {other}}" xid="7670372064920373295"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">32,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7670372064920373295" datatype="html">
+        <source>{VAR_SELECT, select, male {male} female {female} other {other}}</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="313334560682618967" datatype="html">
+        <source> Updated: <x id="ICU" equiv-text="{minutes, plural, =0 {just now} =1 {one minute ago} other
+      {{{minutes}} minutes ago by {gender, select, male {male} female {female}
+      other {other}}}}" xid="6988904457887003660"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">35,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2508975984005233379" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {just now} =1 {one minute ago} other {<x id="INTERPOLATION"/> minutes ago by {VAR_SELECT, select, male {male} female {female} other {other}}}}</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">36,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2486054965799478476" datatype="html">
+        <source>Hello!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">A sample translation</note>
+        <note priority="1" from="meaning">basic text</note>
+      </trans-unit>
+      <trans-unit id="5199719776381524455" datatype="html">
+        <source>Hello <x id="PH" equiv-text="person"/>!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/heroes/dashboard/dashboard.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
