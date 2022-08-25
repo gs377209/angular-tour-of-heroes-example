@@ -5,8 +5,9 @@
   "description": "learning angular",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open --configuration=fr",
-    "build": "ng build --localize",
+    "start": "ng serve --open",
+    "start:fr": "ng serve --open --configuration=fr",
+    "build": "ng build",
     "deploy": "ng deploy",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -19,7 +20,8 @@
     "stylelint": "stylelint --max-warnings 0 'src/**/*.{css,scss,sass}'",
     "preversion": "npm run test:ci",
     "version": "npm run build && git add .",
-    "postversion": "git push && git push --tags && rm -rf build/temp && rm -rf dist"
+    "postversion": "git push && git push --tags && rm -rf build/temp && rm -rf dist",
+    "extract": "ng extract-i18n --output-path=src/locale"
   },
   "dependencies": {
     "@angular/animations": "^14.1.3",

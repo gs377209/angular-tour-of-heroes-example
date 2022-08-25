@@ -17,8 +17,7 @@
         "sourceLocale": "en-US",
         "locales": {
           "fr": {
-            "translation": "src/locale/messages.fr.xlf",
-            "baseHref": "fr-CA"
+            "translation": "src/locale/messages.fr.xlf"
           }
         }
       },
@@ -26,7 +25,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "i18nMissingTranslation": "warning",
+            "localize": true,
+            "i18nMissingTranslation": "error",
             "outputPath": "dist/angular-tour-of-heroes-example",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -66,6 +66,7 @@
               "outputHashing": "all"
             },
             "development": {
+              "localize": false,
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
