@@ -8,7 +8,7 @@
     "start": "ng serve --open",
     "start:fr": "ng serve --open --configuration=fr",
     "build": "ng build",
-    "build:gh-pages": "ng build --output-path docs --base-href /angular-tour-of-heroes-example/ && cp docs/index.html docs/404.html && git add . && git commit --no-verify -m 'deploying gh-pages' && git push",
+    "build:gh-pages": "ng build --output-path docs --base-href /angular-tour-of-heroes-example/ && cp docs/en-US/index.html docs/en-US/404.html && cp docs/fr/index.html docs/fr/404.html && git add . && git commit --no-verify -m 'deploying gh-pages' && git push",
     "deploy": "ng deploy",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",

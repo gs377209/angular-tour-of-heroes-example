@@ -1,0 +1,79 @@
+{
+  "configVersion": 1,
+  "timestamp": 1661522344047,
+  "index": "/angular-tour-of-heroes-example/fr/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/angular-tour-of-heroes-example/fr/151.536684477b9e7e9b.js",
+        "/angular-tour-of-heroes-example/fr/372.3ff35d9a62682fc5.js",
+        "/angular-tour-of-heroes-example/fr/385.3972ca6f06840833.js",
+        "/angular-tour-of-heroes-example/fr/482.5a01b83ac092423c.js",
+        "/angular-tour-of-heroes-example/fr/587.5a7498675ca022f5.js",
+        "/angular-tour-of-heroes-example/fr/719.5b2a4304c550b57a.js",
+        "/angular-tour-of-heroes-example/fr/common.96fa070a8b38477c.js",
+        "/angular-tour-of-heroes-example/fr/favicon.ico",
+        "/angular-tour-of-heroes-example/fr/index.html",
+        "/angular-tour-of-heroes-example/fr/main.4eae21e48eca61ce.js",
+        "/angular-tour-of-heroes-example/fr/polyfills.49c5fd9520c86cdd.js",
+        "/angular-tour-of-heroes-example/fr/runtime.92737e8b2cfd7f27.js",
+        "/angular-tour-of-heroes-example/fr/styles.7ded3afc0c544b6f.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/angular-tour-of-heroes-example/fr/assets/favicon.ico"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/angular-tour-of-heroes-example/fr/151.536684477b9e7e9b.js": "820418e170679f42d05603182d14c54e1c142d15",
+    "/angular-tour-of-heroes-example/fr/372.3ff35d9a62682fc5.js": "fd2d0c5eb40fed60634278651db290531586eda8",
+    "/angular-tour-of-heroes-example/fr/385.3972ca6f06840833.js": "1d6015f747bc39bf0e521cdbf170b7f978db7234",
+    "/angular-tour-of-heroes-example/fr/482.5a01b83ac092423c.js": "eddb5c90b636ca241cb769fb2d30c2e8574b3e03",
+    "/angular-tour-of-heroes-example/fr/587.5a7498675ca022f5.js": "a9f54db2f7779584715c0c1b01ac6700d09c6eeb",
+    "/angular-tour-of-heroes-example/fr/719.5b2a4304c550b57a.js": "41325642928ff88ade0ff3f42e6a215d318ee7c6",
+    "/angular-tour-of-heroes-example/fr/assets/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/angular-tour-of-heroes-example/fr/common.96fa070a8b38477c.js": "b87aa5c321737529d9198981c7ebbed5e10f2f2e",
+    "/angular-tour-of-heroes-example/fr/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/angular-tour-of-heroes-example/fr/index.html": "1fad5d5de11e7d0ff4ceceea73133afa23218feb",
+    "/angular-tour-of-heroes-example/fr/main.4eae21e48eca61ce.js": "b63be7f506ad1d7b245c78dae37755b56b700f0e",
+    "/angular-tour-of-heroes-example/fr/polyfills.49c5fd9520c86cdd.js": "eeb544b900dcdd95814db199ef77e8aa211a36b8",
+    "/angular-tour-of-heroes-example/fr/runtime.92737e8b2cfd7f27.js": "df40013c3abcf91b836da96b89ad29903c9a8a41",
+    "/angular-tour-of-heroes-example/fr/styles.7ded3afc0c544b6f.css": "b5fc59c60bd3366f445765df100aa370654cf292"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
