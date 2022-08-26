@@ -9,6 +9,14 @@
   >
   <a
     mat-list-item
+    routerLink="./"
+    routerLinkActive="selected"
+    [routerLinkActiveOptions]="{ exact: true }"
+    ariaCurrentWhenActive="page"
+    >Hero List</a
+  >
+  <a
+    mat-list-item
     routerLink="./hero-form"
     routerLinkActive="selected"
     ariaCurrentWhenActive="page"

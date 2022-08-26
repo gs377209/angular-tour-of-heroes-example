@@ -1,0 +1,15 @@
+<h3>Insert/Remove</h3>
+
+<button mat-raised-button color="primary" type="button" (click)="toggle()">
+  Toggle Insert/Remove
+</button>
+
+<mat-card
+  @myInsertRemoveTrigger
+  *ngIf="isShown"
+  class="insert-remove-container"
+>
+  <mat-card-content>
+    <p>The box is inserted</p>
+  </mat-card-content>
+</mat-card>

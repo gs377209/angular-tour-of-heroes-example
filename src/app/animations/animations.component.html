@@ -1,2 +1,28 @@
 <h2>Animations</h2>
+<mat-nav-list>
+  <a
+    mat-list-item
+    routerLink="./open-close"
+    routerLinkActive="selected"
+    [routerLinkActiveOptions]="{ exact: true }"
+    ariaCurrentWhenActive="page"
+    >Open/Close</a
+  >
+  <a
+    mat-list-item
+    routerLink="./insert-remove"
+    routerLinkActive="selected"
+    [routerLinkActiveOptions]="{ exact: true }"
+    ariaCurrentWhenActive="page"
+    >Insert/Remove</a
+  >
+  <a
+    mat-list-item
+    routerLink="./status-slider"
+    routerLinkActive="selected"
+    [routerLinkActiveOptions]="{ exact: true }"
+    ariaCurrentWhenActive="page"
+    >Status Slider</a
+  >
+</mat-nav-list>
 <router-outlet></router-outlet>
