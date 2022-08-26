@@ -1,0 +1,16 @@
+/* HeroesComponent's private CSS styles */
+mat-list-item {
+  margin-top: 0.5rem;
+
+  a {
+    min-width: 200px;
+  }
+}
+
+mat-card {
+  margin-bottom: 1rem;
+}
+
+.selected {
+  background-color: blue;
+}

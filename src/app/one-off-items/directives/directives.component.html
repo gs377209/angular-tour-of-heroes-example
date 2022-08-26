@@ -1,0 +1,48 @@
+<form>
+  <mat-card>
+    <mat-card-title>Pick a highlight color</mat-card-title>
+    <mat-card-content>
+      <div class="radios">
+        <label id="radio-group-label">Select a color:</label>
+        <mat-radio-group
+          aria-labelledby="radio-group-label"
+          [(ngModel)]="color"
+          name="color"
+        >
+          <mat-radio-button value="lightgreen">Green</mat-radio-button>
+          <mat-radio-button value="yellow">Yellow</mat-radio-button>
+          <mat-radio-button value="cyan">Cyan</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <p [appHighlight]="color">Highlight me!</p>
+      <p [appHighlight]="color" defaultColor="violet">Highlight me too!</p>
+
+      <p ngNonBindable [appHighlight]="'lightgreen'">
+        This should not evaluate: {{ 1 + 1 }}, but will highlight yellow.
+      </p>
+
+      <p>
+        The condition is currently
+        <span [ngClass]="{ a: !condition, b: condition, unless: true }">{{
+          condition
+        }}</span
+        >.
+        <button
+          mat-raised-button
+          [color]="condition ? 'primary' : 'accent'"
+          type="button"
+          (click)="condition = !condition"
+        >
+          Toggle condition to {{ condition ? "false" : "true" }}
+        </button>
+      </p>
+      <p *appUnless="condition" class="unless a">
+        (A) This paragraph is displayed because the condition is false.
+      </p>
+      <p *appUnless="!condition" class="unless b">
+        (B) Although the condition is true, this paragraph is displayed because
+        appUnless is set to false.
+      </p>
+    </mat-card-content>
+  </mat-card>
+</form>

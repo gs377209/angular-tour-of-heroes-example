@@ -1,0 +1,63 @@
+<h2>My Heroes</h2>
+
+<form>
+  <mat-card>
+    <mat-card-title>Add Hero</mat-card-title>
+    <mat-card-subtitle>Don't you want more???</mat-card-subtitle>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Hero name: </mat-label>
+        <input matInput id="new-hero" #heroName placeholder="name" />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- (click) passes input value to add() and then clears the input -->
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="add-button"
+        (click)="add(heroName.value); heroName.value = ''"
+      >
+        Add hero
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+<mat-card>
+  <mat-card-title>Heroes</mat-card-title>
+  <mat-card-content>
+    <mat-list role="list" class="heroes">
+      <mat-list-item role="listitem" *ngFor="let hero of heroes$ | async">
+        <a
+          mat-raised-button
+          color="primary"
+          [matBadge]="hero.id"
+          matBadgePosition="before"
+          matBadgeColor="accent"
+          [routerLink]="['/superheroes', hero.id]"
+          [class.selected]="hero.id === selectedId"
+        >
+          {{ hero.name }}
+        </a>
+        <button
+          mat-icon-button
+          color="warn"
+          type="button"
+          aria-label="Delete Hero"
+          class="delete"
+          title="delete hero"
+          (click)="delete(hero)"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="accent" routerLink="/sidekicks">
+      Go to sidekicks
+    </a>
+  </mat-card-actions>
+</mat-card>

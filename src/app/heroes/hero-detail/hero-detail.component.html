@@ -1,0 +1,35 @@
+<form *ngIf="hero$ | async as hero">
+  <mat-card>
+    <mat-card-title>{{ hero.name | titlecase }} Details</mat-card-title>
+    <mat-card-subtitle>ID: {{ hero.id }}</mat-card-subtitle>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Hero name: </mat-label>
+        <input
+          matInput
+          [(ngModel)]="hero.name"
+          placeholder="name"
+          name="name"
+        />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="accent"
+        type="button"
+        (click)="gotoHeroes(hero)"
+      >
+        go back
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="save(hero)"
+      >
+        save
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

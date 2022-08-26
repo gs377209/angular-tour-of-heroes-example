@@ -2,10 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
-- Vercel: <https://angular-tour-of-heroes-example.vercel.app/>
-- [![Netlify Status](https://api.netlify.com/api/v1/badges/6e251572-448d-48ed-a7f8-5f1f8134cffa/deploy-status)](https://app.netlify.com/sites/angular-tour-of-heroes-example/deploys) Netlify: <https://angular-tour-of-heroes-example.netlify.app/>
-- Firebase: <https://angular-heroes-example.web.app/>
-- GH Pages: <https://www.gerrod-schirtzinger.com/angular-tour-of-heroes-example/>
+- Vercel: <https://angular-tour-of-heroes-example.vercel.app/en-US>
+- [![Netlify Status](https://api.netlify.com/api/v1/badges/6e251572-448d-48ed-a7f8-5f1f8134cffa/deploy-status)](https://app.netlify.com/sites/angular-tour-of-heroes-example/deploys) Netlify: <https://angular-tour-of-heroes-example.netlify.app/en-US>
+- Firebase: <https://angular-heroes-example.web.app/en-US>
+- GH Pages: <https://www.gerrod-schirtzinger.com/angular-tour-of-heroes-example/en-US>
 
 ## Development server
 
@@ -13,7 +13,7 @@ Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The appl
 
 ## Code scaffolding
 
-Run `npm run ng -- generate component component-name` to generate a new component. You can also use `npm run ng -- generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `npm run ng -- generate component component-name` to generate a new component. You can also use `npm run ng -- generate directive|pipe|service|class|guard|interface|enum|module|interceptor|resolver|web-worker`.
 
 ## Build
 

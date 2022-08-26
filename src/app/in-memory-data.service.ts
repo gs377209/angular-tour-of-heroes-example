@@ -1,7 +1,10 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Injectable } from '@angular/core';
 
-import { Hero } from './hero';
+import { CRISES } from './crisis-center/mock-crises';
+import { Crisis } from './crisis-center/crisis';
+import { HEROES } from './heroes/mock-heros';
+import { Hero } from './heroes/hero';
 
 @Injectable({
   providedIn: 'root',
@@ -12,28 +15,19 @@ export class InMemoryDataService implements InMemoryDbService {
   }
 
   createDb() {
-    const heroes = [
-      { id: 12, name: 'Dr. Nice' },
-      { id: 13, name: 'Bombasto' },
-      { id: 14, name: 'Celeritas' },
-      { id: 15, name: 'Magneta' },
-      { id: 16, name: 'RubberMan' },
-      { id: 17, name: 'Dynama' },
-      { id: 18, name: 'Dr. IQ' },
-      { id: 19, name: 'Magma' },
-      { id: 20, name: 'Tornado' },
-    ];
-    return { heroes };
+    const heroes = HEROES;
+    const crises = CRISES;
+    return { heroes, crises };
   }
 
-  // Overrides the genId method to ensure that a hero always has an id.
-  // If the heroes array is empty,
+  // Overrides the genId method to ensure that an item always has an id.
+  // If the items array is empty,
   // the method below returns the initial number (11).
-  // if the heroes array is not empty, the method below returns the highest
-  // hero id + 1.
-  genId(heroes: Hero[]): number {
-    return heroes.length > 0
-      ? Math.max(...heroes.map((hero) => hero.id)) + 1
+  // if the items array is not empty, the method below returns the highest
+  // item id + 1.
+  genId(items: Hero[] | Crisis[]): number {
+    return items.length > 0
+      ? Math.max(...items.map((item) => item.id)) + 1
       : 11;
   }
 }

@@ -1,0 +1,9 @@
+<h3>Dashboard</h3>
+
+<p>Session ID: {{ sessionId$ | async }}</p>
+<p>Token: {{ token$ | async }}</p>
+
+<h4>Preloaded Modules</h4>
+<mat-list>
+  <mat-list-item *ngFor="let module of modules">{{ module }}</mat-list-item>
+</mat-list>

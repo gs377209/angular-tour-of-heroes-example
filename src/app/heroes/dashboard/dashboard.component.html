@@ -1,0 +1,46 @@
+<h2>Top Heroes</h2>
+<div class="heroes-menu">
+  <a
+    mat-raised-button
+    color="primary"
+    *ngFor="let hero of heroes"
+    routerLink="/superheroes/{{ hero.id }}"
+  >
+    {{ hero.name }}
+  </a>
+</div>
+
+<mat-card>
+  <mat-card-title
+    i18n="example card header|An introduction header for this sample"
+    >Internationalization Examples</mat-card-title
+  >
+  <mat-card-content>
+    <p i18n>Date: {{ today | date }}</p>
+    <p i18n>Currency: {{ amount | currency }}</p>
+    <p i18n>
+      Currency Hard coded to en-US:
+      {{ amount | currency: "USD":"symbol":undefined:"en-US" }}
+    </p>
+    <p i18n>Decimal: {{ amount | number }}</p>
+    <p i18n>Percent: {{ amount | percent }}</p>
+    <p>Only <ng-container i18n>part</ng-container> of this is translated</p>
+    <img [src]="logo" i18n-title title="Angular logo" alt="Angular logo" />
+    <p>{{ translated }}</p>
+    <p>{{ translatedWithVar }}</p>
+    <p i18n>
+      Updated {minutes, plural, =0 {just now} =1 {one minute ago} other
+      {{{minutes}} minutes ago}}
+    </p>
+    <p i18n>
+      The author is {gender, select, male {male} female {female} other {other}}
+    </p>
+    <p i18n>
+      Updated: {minutes, plural, =0 {just now} =1 {one minute ago} other
+      {{{minutes}} minutes ago by {gender, select, male {male} female {female}
+      other {other}}}}
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<app-hero-search></app-hero-search>
