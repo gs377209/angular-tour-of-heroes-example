@@ -1,0 +1,9 @@
+<h3>Open Close</h3>
+
+<button mat-raised-button color="primary" type="button" (click)="toggle()">
+  Toggle Open/Close
+</button>
+
+<div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
+  <p>The box is now {{ isOpen ? "Open" : "Closed" }}!</p>
+</div>

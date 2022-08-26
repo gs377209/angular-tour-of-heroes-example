@@ -47,6 +47,11 @@ const routes: Routes = [
     canLoad: [AuthGuard],
   },
   { path: '', redirectTo: 'superheroes/dashboard', pathMatch: 'full' },
+  {
+    path: 'animations',
+    loadChildren: () =>
+      import('./animations/animations.module').then((m) => m.AnimationsModule),
+  },
   { path: '**', title: 'Page Not Found', component: PageNotFoundComponent },
 ];
 

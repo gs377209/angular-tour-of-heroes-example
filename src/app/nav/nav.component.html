@@ -32,6 +32,13 @@
       >
       <a
         mat-list-item
+        routerLink="/animations"
+        routerLinkActive="selected"
+        ariaCurrentWhenActive="page"
+        >Animations</a
+      >
+      <a
+        mat-list-item
         [routerLink]="[{ outlets: { popup: ['compose'] } }]"
         routerLinkActive="selected"
         ariaCurrentWhenActive="page"
