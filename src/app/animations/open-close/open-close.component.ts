@@ -4,8 +4,11 @@ import {
   style,
   transition,
   trigger,
+  useAnimation,
 } from '@angular/animations';
 import { Component } from '@angular/core';
+
+import { transitionAnimation } from 'src/app/animations';
 
 @Component({
   selector: 'app-open-close',
@@ -29,7 +32,16 @@ import { Component } from '@angular/core';
           backgroundColor: 'blue',
         })
       ),
-      transition('open => closed', [animate('1s')]),
+      transition('open => closed', [
+        useAnimation(transitionAnimation, {
+          params: {
+            height: 0,
+            opacity: 1,
+            backgroundColor: 'red',
+            time: '1s',
+          },
+        }),
+      ]),
       transition('closed => open', [animate('0.5s')]),
       transition('* => closed', [animate('1s')]),
       transition('* => open', [animate('0.5s')]),

@@ -17,9 +17,18 @@
 }
 
 main {
-  max-width: 1000px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
   margin: auto;
   padding: 1rem;
+}
+
+.content {
+  flex: 0 1 60%;
+  margin-right: 1rem;
 }
 
 .selected {

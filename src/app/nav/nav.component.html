@@ -84,11 +84,15 @@
     </mat-toolbar>
     <!-- Add Content Here -->
     <main>
-      <div [@routeAnimation]="getAnimationData()">
-        <router-outlet></router-outlet>
+      <div class="content">
+        <router-outlet name="popup"></router-outlet>
+        <div [@routeAnimation]="getAnimationData()">
+          <router-outlet></router-outlet>
+        </div>
       </div>
-      <router-outlet name="popup"></router-outlet>
-      <app-messages></app-messages>
+      <div>
+        <app-messages></app-messages>
+      </div>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
