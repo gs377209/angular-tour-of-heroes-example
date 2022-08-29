@@ -9,6 +9,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    data: { animation: 'login' },
   },
   {
     matcher: (url) => {
@@ -27,6 +28,7 @@ const routes: Routes = [
     component: ProfileComponent,
     canLoad: [AuthGuard],
     canActivate: [AuthGuard],
+    data: { animation: 'profile' },
   },
 ];
 

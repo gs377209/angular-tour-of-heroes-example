@@ -18,12 +18,13 @@ const routes: Routes = [
     title: 'Compose Message',
     component: ComposeMessageComponent,
     outlet: 'popup',
+    data: { animation: 'compose' },
   },
   {
     path: 'superheroes',
     loadChildren: () =>
       import('./heroes/heroes.module').then((m) => m.HeroesModule),
-    data: { preload: true },
+    data: { preload: true, animation: 'superheroes' },
   },
   {
     path: 'crisis-center',
@@ -31,7 +32,7 @@ const routes: Routes = [
       import('./crisis-center/crisis-center.module').then(
         (m) => m.CrisisCenterModule
       ),
-    data: { preload: true },
+    data: { preload: true, animation: 'crisisCenter' },
   },
   {
     path: 'one-off-items',
@@ -39,20 +40,33 @@ const routes: Routes = [
       import('./one-off-items/one-off-items.module').then(
         (m) => m.OneOffItemsModule
       ),
+    data: { animation: 'oneOffItems' },
   },
   {
     path: 'admin',
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
     canLoad: [AuthGuard],
+    data: { animation: 'admin' },
   },
-  { path: '', redirectTo: 'superheroes/dashboard', pathMatch: 'full' },
+  {
+    path: '',
+    redirectTo: 'superheroes/dashboard',
+    pathMatch: 'full',
+    data: { animation: 'heroDashboard' },
+  },
   {
     path: 'animations',
     loadChildren: () =>
       import('./animations/animations.module').then((m) => m.AnimationsModule),
+    data: { animation: 'animations' },
   },
-  { path: '**', title: 'Page Not Found', component: PageNotFoundComponent },
+  {
+    path: '**',
+    title: 'Page Not Found',
+    component: PageNotFoundComponent,
+    data: { animation: 'pageNotFound' },
+  },
 ];
 
 @Injectable({ providedIn: 'root' })

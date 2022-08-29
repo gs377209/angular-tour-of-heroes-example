@@ -11,21 +11,25 @@ const routes: Routes = [
     path: '',
     component: AnimationsComponent,
     title: 'Animations',
+    data: { animation: 'animations' },
     children: [
       {
         path: 'open-close',
         component: OpenCloseComponent,
-        title: 'Open/ Close Animation',
+        title: 'Open/Close Animation',
+        data: { animation: 'openClose' },
       },
       {
         path: 'insert-remove',
         component: InsertRemoveComponent,
         title: 'Insert/Remove Animation',
+        data: { animation: 'insertRemove' },
       },
       {
         path: 'status-slider',
         component: StatusSliderComponent,
         title: 'Status Slider Animation',
+        data: { animation: 'statusSlider' },
       },
     ],
   },

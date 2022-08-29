@@ -13,11 +13,13 @@ const crisisCenterRoutes: Routes = [
     path: '',
     title: 'Crisis Center',
     component: CrisisCenterComponent,
+    data: { animation: 'crisisCenter' },
     children: [
       {
         path: '',
         component: CrisisListComponent,
         title: 'Crises',
+        data: { animation: 'crisisCenter' },
         children: [
           {
             path: ':id',
@@ -27,11 +29,13 @@ const crisisCenterRoutes: Routes = [
             resolve: {
               crisis: CrisisDetailResolverService,
             },
+            data: { animation: 'crisisDetail' },
           },
           {
             path: '',
             title: 'Crisis Home',
             component: CrisisCenterHomeComponent,
+            data: { animation: 'crisisCenter' },
           },
         ],
       },
