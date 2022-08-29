@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AnimationsModule } from '../animations.module';
 import { OpenCloseComponent } from './open-close.component';
 
 describe('OpenCloseComponent', () => {
@@ -8,7 +10,7 @@ describe('OpenCloseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [OpenCloseComponent],
+      imports: [AnimationsModule, NoopAnimationsModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(OpenCloseComponent);

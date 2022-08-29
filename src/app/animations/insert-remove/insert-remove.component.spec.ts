@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AnimationsModule } from '../animations.module';
 import { InsertRemoveComponent } from './insert-remove.component';
 
 describe('InsertRemoveComponent', () => {
@@ -8,7 +10,7 @@ describe('InsertRemoveComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [InsertRemoveComponent],
+      imports: [AnimationsModule, NoopAnimationsModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(InsertRemoveComponent);
