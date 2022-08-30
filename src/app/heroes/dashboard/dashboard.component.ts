@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   today = new Date();
   minutes = 2;
   amount = 9999.99;
-  logo = 'assets/favicon.ico';
+  logo = 'assets/icons/icon-128x128.png';
   translated = $localize`:basic text|A sample translation:Hello!`;
   translatedWithVar = '';
   gender = 'n/a';

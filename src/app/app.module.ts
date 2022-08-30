@@ -21,6 +21,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 
 // Material Design
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -67,6 +68,7 @@ import { httpInterceptorProviders } from './http-interceptors';
       dataEncapsulation: false,
     }),
     BrowserAnimationsModule,
+    NgOptimizedImage,
     MatButtonModule,
     MatListModule,
     MatIconModule,

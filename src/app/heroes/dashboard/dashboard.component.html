@@ -25,7 +25,14 @@
     <p i18n>Decimal: {{ amount | number }}</p>
     <p i18n>Percent: {{ amount | percent }}</p>
     <p>Only <ng-container i18n>part</ng-container> of this is translated</p>
-    <img [src]="logo" i18n-title title="Angular logo" alt="Angular logo" />
+    <img
+      [rawSrc]="logo"
+      width="128"
+      height="128"
+      i18n-title
+      title="Angular logo"
+      alt="Angular logo"
+    />
     <p>{{ translated }}</p>
     <p>{{ translatedWithVar }}</p>
     <p i18n>
