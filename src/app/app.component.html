@@ -1,1 +1,98 @@
-<app-nav></app-nav>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a
+        mat-list-item
+        routerLink="/superheroes"
+        routerLinkActive="selected"
+        ariaCurrentWhenActive="page"
+        >Heroes</a
+      >
+      <a
+        mat-list-item
+        routerLink="/crisis-center"
+        routerLinkActive="selected"
+        ariaCurrentWhenActive="page"
+        >Crisis Center</a
+      >
+      <a
+        mat-list-item
+        routerLink="/one-off-items"
+        routerLinkActive="selected"
+        ariaCurrentWhenActive="page"
+        >One Off Items</a
+      >
+      <a
+        mat-list-item
+        routerLink="/animations"
+        routerLinkActive="selected"
+        ariaCurrentWhenActive="page"
+        >Animations</a
+      >
+      <a
+        mat-list-item
+        [routerLink]="[{ outlets: { popup: ['compose'] } }]"
+        routerLinkActive="selected"
+        ariaCurrentWhenActive="page"
+        >Contact</a
+      >
+      <a
+        mat-list-item
+        routerLink="/admin"
+        routerLinkActive="selected"
+        ariaCurrentWhenActive="page"
+        >Admin</a
+      >
+      <a
+        mat-list-item
+        routerLink="/@Gerrod"
+        routerLinkActive="selected"
+        ariaCurrentWhenActive="page"
+        >My Profile</a
+      >
+      <a
+        mat-list-item
+        routerLink="/login"
+        routerLinkActive="selected"
+        ariaCurrentWhenActive="page"
+        >Login</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <a routerLink="/" ariaCurrentWhenActive="page" class="subtle-link"
+        >Tour of Heroes</a
+      >
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <main>
+      <div class="content">
+        <router-outlet name="popup"></router-outlet>
+        <div [@routeAnimation]="getAnimationData()">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+      <div>
+        <app-messages></app-messages>
+      </div>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

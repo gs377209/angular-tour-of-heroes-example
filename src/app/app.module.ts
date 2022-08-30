@@ -35,6 +35,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -42,7 +43,6 @@ import { AuthModule } from './auth/auth.module';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { InMemoryDataService } from './in-memory-data.service';
 import { MessagesComponent } from './messages/messages.component';
-import { NavComponent } from './nav/nav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -54,10 +54,9 @@ import { httpInterceptorProviders } from './http-interceptors';
     MessagesComponent,
     PageNotFoundComponent,
     ComposeMessageComponent,
-    NavComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -89,14 +88,15 @@ import { httpInterceptorProviders } from './http-interceptors';
     providePerformance(() => getPerformance()),
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
+    AuthModule,
+    AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
-    AuthModule,
-    AppRoutingModule,
+    RouterModule,
   ],
   providers: [
     ScreenTrackingService,
