@@ -145,6 +145,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
+            "localize": true,
             "outputPath": "dist/angular-tour-of-heroes-example/server",
             "main": "src/main.server.ts",
             "tsConfig": "tsconfig.server.json",
