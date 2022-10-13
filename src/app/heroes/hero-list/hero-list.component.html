@@ -29,7 +29,12 @@
   <mat-card-title>Heroes</mat-card-title>
   <mat-card-content>
     <mat-list role="list" class="heroes">
-      <mat-list-item role="listitem" *ngFor="let hero of heroes$ | async">
+      <mat-list-item
+        [@flyInOut]="'in'"
+        role="listitem"
+        *ngFor="let hero of heroes$ | async"
+        class="hero"
+      >
         <a
           mat-raised-button
           color="primary"

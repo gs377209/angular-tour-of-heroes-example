@@ -14,14 +14,28 @@ const routes: Routes = [
     // alternate:
     // canMatch: [AuthGuard],
     canActivate: [AuthGuard],
+    data: { animation: 'admin' },
     children: [
       {
         path: '',
         canActivateChild: [AuthGuard],
+        data: { animation: 'admin' },
         children: [
-          { path: 'crises', component: ManageCrisesComponent },
-          { path: 'heroes', component: ManageHeroesComponent },
-          { path: '', component: AdminDashboardComponent },
+          {
+            path: 'crises',
+            component: ManageCrisesComponent,
+            data: { animation: 'crises' },
+          },
+          {
+            path: 'heroes',
+            component: ManageHeroesComponent,
+            data: { animation: 'heroes' },
+          },
+          {
+            path: '',
+            component: AdminDashboardComponent,
+            data: { animation: 'admin' },
+          },
         ],
       },
     ],

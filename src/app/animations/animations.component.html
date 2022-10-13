@@ -1,28 +1,28 @@
+<h2>Animations</h2>
 <mat-nav-list>
   <a
     mat-list-item
-    routerLink="./dashboard"
+    routerLink="./open-close"
     routerLinkActive="selected"
     [routerLinkActiveOptions]="{ exact: true }"
     ariaCurrentWhenActive="page"
-    >Dashboard</a
+    >Open/Close</a
   >
   <a
     mat-list-item
-    routerLink="./"
+    routerLink="./insert-remove"
     routerLinkActive="selected"
     [routerLinkActiveOptions]="{ exact: true }"
     ariaCurrentWhenActive="page"
-    >Hero List</a
+    >Insert/Remove</a
   >
   <a
     mat-list-item
-    routerLink="./hero-form"
+    routerLink="./status-slider"
     routerLinkActive="selected"
+    [routerLinkActiveOptions]="{ exact: true }"
     ariaCurrentWhenActive="page"
-    >Hero Form</a
+    >Status Slider</a
   >
 </mat-nav-list>
-<div [@routeAnimation]="getAnimationData()">
-  <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet>
