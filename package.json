@@ -3,6 +3,11 @@
   "repository": "https://github.com/gs377209/angular-tour-of-heroes-example.git",
   "version": "0.0.8",
   "description": "learning angular",
+  "engines": {
+    "node": ">=18.12.0",
+    "npm": ">=8.19.2"
+  },
+  "engineStrict": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
