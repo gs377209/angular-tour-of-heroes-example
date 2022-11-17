@@ -1,3 +1,4 @@
+/* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
 mat-card {
   margin-bottom: 1rem;
 }
@@ -10,7 +11,7 @@ label {
   margin-right: 1rem;
 }
 
-.mat-radio-button ~ .mat-radio-button {
+.mat-mdc-radio-button ~ .mat-radio-button {
   margin-left: 16px;
 }
 

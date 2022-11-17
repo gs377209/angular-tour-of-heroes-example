@@ -1,4 +1,4 @@
-<mat-card *ngIf="!submitted">
+<mat-card appearance="outlined" *ngIf="!submitted">
   <form #heroForm="ngForm" (ngSubmit)="onSubmit()">
     <mat-card-title>Hero Form</mat-card-title>
     <mat-card-content>
@@ -66,7 +66,7 @@
   </form>
 </mat-card>
 
-<mat-card *ngIf="submitted">
+<mat-card appearance="outlined" *ngIf="submitted">
   <mat-card-title>You submitted the following:</mat-card-title>
   <mat-card-content>
     <mat-list role="list">
