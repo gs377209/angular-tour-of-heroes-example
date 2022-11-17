@@ -1,5 +1,7 @@
 <mat-card appearance="outlined" *ngIf="messageService.messages.length">
-  <mat-card-title>Messages</mat-card-title>
+  <mat-card-header>
+    <mat-card-title>Messages</mat-card-title>
+  </mat-card-header>
   <mat-card-content>
     <mat-list role="list">
       <mat-list-item
@@ -11,15 +13,17 @@
       </mat-list-item>
     </mat-list>
   </mat-card-content>
-  <mat-card-actions>
-    <button
-      mat-raised-button
-      color="primary"
-      type="button"
-      class="clear"
-      (click)="messageService.clear()"
-    >
-      Clear messages
-    </button>
-  </mat-card-actions>
+  <mat-card-footer>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        class="clear"
+        (click)="messageService.clear()"
+      >
+        Clear messages
+      </button>
+    </mat-card-actions>
+  </mat-card-footer>
 </mat-card>

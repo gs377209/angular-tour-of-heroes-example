@@ -2,34 +2,41 @@
 
 <form>
   <mat-card appearance="outlined">
-    <mat-card-title>Add Hero</mat-card-title>
-    <mat-card-subtitle>Don't you want more???</mat-card-subtitle>
+    <mat-card-header>
+      <mat-card-title>Add Hero</mat-card-title>
+      <mat-card-subtitle>Don't you want more???</mat-card-subtitle>
+    </mat-card-header>
     <mat-card-content>
       <mat-form-field appearance="fill">
         <mat-label>Hero name: </mat-label>
         <input matInput id="new-hero" #heroName placeholder="name" />
       </mat-form-field>
     </mat-card-content>
-    <mat-card-actions>
-      <!-- (click) passes input value to add() and then clears the input -->
-      <button
-        mat-raised-button
-        color="primary"
-        type="submit"
-        class="add-button"
-        (click)="add(heroName.value); heroName.value = ''"
-      >
-        Add hero
-      </button>
-    </mat-card-actions>
+    <mat-card-footer>
+      <mat-card-actions>
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="add-button"
+          (click)="add(heroName.value); heroName.value = ''"
+        >
+          Add hero
+        </button>
+      </mat-card-actions>
+    </mat-card-footer>
   </mat-card>
 </form>
 
 <mat-card appearance="outlined">
-  <mat-card-title>Heroes</mat-card-title>
+  <mat-card-header>
+    <mat-card-title>Heroes</mat-card-title>
+  </mat-card-header>
   <mat-card-content>
     <mat-list role="list" class="heroes">
-      <mat-list-item
+      <div
+        class="heroes-item"
         [@flyInOut]="'in'"
         role="listitem"
         *ngFor="let hero of heroes$ | async"
@@ -57,12 +64,14 @@
         >
           <mat-icon>close</mat-icon>
         </button>
-      </mat-list-item>
+      </div>
     </mat-list>
   </mat-card-content>
-  <mat-card-actions>
-    <a mat-raised-button color="accent" routerLink="/sidekicks">
-      Go to sidekicks
-    </a>
-  </mat-card-actions>
+  <mat-card-footer>
+    <mat-card-actions>
+      <a mat-raised-button color="accent" routerLink="/sidekicks">
+        Go to sidekicks
+      </a>
+    </mat-card-actions>
+  </mat-card-footer>
 </mat-card>

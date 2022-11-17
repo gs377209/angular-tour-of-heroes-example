@@ -1,7 +1,6 @@
 /* HeroesComponent's private CSS styles */
 
-/* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
-mat-list-item {
+.heroes-item {
   margin-top: 0.5rem;
 
   a {
@@ -9,9 +8,12 @@ mat-list-item {
   }
 }
 
-/* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
 mat-card {
   margin-bottom: 1rem;
+}
+
+mat-card-actions button {
+  margin: 0.5rem;
 }
 
 .selected {
