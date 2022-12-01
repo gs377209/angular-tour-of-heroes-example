@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { OneOffItemsModule } from '../one-off-items.module';
 
 import { DirectivesComponent } from './directives.component';
 
@@ -8,7 +9,7 @@ describe('DirectivesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DirectivesComponent],
+      imports: [OneOffItemsModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DirectivesComponent);

@@ -1,9 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { cold, getTestScheduler } from 'jasmine-marbles';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { HeroSearchComponent } from './hero-search.component';
 import { HeroService } from '../hero.service';
+import { HeroesModule } from '../heroes.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('HeroSearchComponent', () => {
   let component: HeroSearchComponent;
@@ -15,8 +16,7 @@ describe('HeroSearchComponent', () => {
     heroService.getHeroes.and.returnValue(h$);
 
     await TestBed.configureTestingModule({
-      imports: [MatAutocompleteModule],
-      declarations: [HeroSearchComponent],
+      imports: [HeroesModule, NoopAnimationsModule],
       providers: [{ provide: HeroService, useValue: heroService }],
     }).compileComponents();
 

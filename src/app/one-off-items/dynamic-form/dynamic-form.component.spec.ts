@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { OneOffItemsModule } from '../one-off-items.module';
 
 import { DynamicFormComponent } from './dynamic-form.component';
 
@@ -8,7 +10,7 @@ describe('DynamicFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DynamicFormComponent],
+      imports: [OneOffItemsModule, NoopAnimationsModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DynamicFormComponent);

@@ -6,6 +6,8 @@ import { ActivatedRouteStub } from 'src/testing/activated-route-stub';
 
 import { HeroListComponent } from './hero-list.component';
 import { HeroService } from '../hero.service';
+import { HeroesModule } from '../heroes.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('HeroesComponent', () => {
   let component: HeroListComponent;
@@ -18,7 +20,7 @@ describe('HeroesComponent', () => {
     const activatedRoute = new ActivatedRouteStub({ id: '1' });
 
     await TestBed.configureTestingModule({
-      declarations: [HeroListComponent],
+      imports: [HeroesModule, NoopAnimationsModule],
       providers: [
         { provide: ActivatedRoute, useValue: activatedRoute },
         { provide: HeroService, useValue: heroService },

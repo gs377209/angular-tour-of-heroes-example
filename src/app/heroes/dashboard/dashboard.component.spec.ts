@@ -3,6 +3,8 @@ import { cold, getTestScheduler } from 'jasmine-marbles';
 
 import { DashboardComponent } from './dashboard.component';
 import { HeroService } from '../hero.service';
+import { HeroesModule } from '../heroes.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -14,7 +16,7 @@ describe('DashboardComponent', () => {
     heroService.getHeroes.and.returnValue(h$);
 
     await TestBed.configureTestingModule({
-      declarations: [DashboardComponent],
+      imports: [HeroesModule, NoopAnimationsModule],
       providers: [{ provide: HeroService, useValue: heroService }],
     }).compileComponents();
 

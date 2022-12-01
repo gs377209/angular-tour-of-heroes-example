@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { ActivatedRouteStub } from 'src/testing/activated-route-stub';
+import { AdminModule } from '../admin.module';
 
 import { AdminDashboardComponent } from './admin-dashboard.component';
 
@@ -12,7 +13,7 @@ describe('AdminDashboardComponent', () => {
     const activatedRoute = new ActivatedRouteStub();
 
     await TestBed.configureTestingModule({
-      declarations: [AdminDashboardComponent],
+      imports: [AdminModule],
       providers: [{ provide: ActivatedRoute, useValue: activatedRoute }],
     }).compileComponents();
 

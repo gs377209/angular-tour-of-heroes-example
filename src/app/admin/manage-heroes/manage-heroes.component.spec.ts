@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AdminModule } from '../admin.module';
 
 import { ManageHeroesComponent } from './manage-heroes.component';
 
@@ -8,7 +9,7 @@ describe('ManageHeroesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ManageHeroesComponent],
+      imports: [AdminModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ManageHeroesComponent);

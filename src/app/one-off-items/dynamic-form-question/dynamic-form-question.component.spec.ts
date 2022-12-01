@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormControl, FormGroup } from '@angular/forms';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { OneOffItemsModule } from '../one-off-items.module';
 import { QuestionTextbox } from '../question-textbox';
 
 import { DynamicFormQuestionComponent } from './dynamic-form-question.component';
@@ -10,7 +12,7 @@ describe('DynamicFormQuestionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DynamicFormQuestionComponent],
+      imports: [OneOffItemsModule, NoopAnimationsModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DynamicFormQuestionComponent);

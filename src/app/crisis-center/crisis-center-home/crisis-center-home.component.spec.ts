@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CrisisCenterModule } from '../crisis-center.module';
 
 import { CrisisCenterHomeComponent } from './crisis-center-home.component';
 
@@ -8,7 +9,7 @@ describe('CrisisCenterHomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CrisisCenterHomeComponent],
+      imports: [CrisisCenterModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CrisisCenterHomeComponent);

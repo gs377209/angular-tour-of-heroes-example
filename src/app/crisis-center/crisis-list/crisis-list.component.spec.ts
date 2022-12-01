@@ -4,8 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 
 import { ActivatedRouteStub } from 'src/testing/activated-route-stub';
 
+import { CrisisCenterModule } from '../crisis-center.module';
 import { CrisisListComponent } from './crisis-list.component';
 import { CrisisService } from '../crisis.service';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('CrisesComponent', () => {
   let component: CrisisListComponent;
@@ -18,7 +20,7 @@ describe('CrisesComponent', () => {
     const activatedRoute = new ActivatedRouteStub({ id: '1' });
 
     await TestBed.configureTestingModule({
-      declarations: [CrisisListComponent],
+      imports: [CrisisCenterModule, NoopAnimationsModule],
       providers: [
         { provide: ActivatedRoute, useValue: activatedRoute },
         { provide: CrisisService, useValue: crisisService },

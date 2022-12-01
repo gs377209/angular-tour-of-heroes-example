@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { DragDropComponent } from './drag-drop.component';
+import { OneOffItemsModule } from '../one-off-items.module';
 
 describe('DragDropComponent', () => {
   let component: DragDropComponent;
@@ -10,8 +10,7 @@ describe('DragDropComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [DragDropComponent],
-      imports: [NoopAnimationsModule, DragDropModule],
+      imports: [NoopAnimationsModule, OneOffItemsModule],
     }).compileComponents();
   }));
 
