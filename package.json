@@ -26,7 +26,10 @@
     "preversion": "npm run test:ci",
     "version": "npm run build && git add .",
     "postversion": "git push && git push --tags && rm -rf build/temp && rm -rf dist",
-    "extract": "ng extract-i18n --output-path=src/locale"
+    "extract": "ng extract-i18n --output-path=src/locale",
+    "typecheck": "tsc -p ./tsconfig.app.json && tsc -p ./tsconfig.spec.json && tsc -p ./tsconfig.server.json && tsc -p ./tsconfig.worker.json",
+    "mdlint": "markdownlint-cli2 '**/*.md' '#node_modules'",
+    "mdlintfix": "markdownlint-cli2-fix '**/*.md' '#node_modules'"
   },
   "dependencies": {
     "@angular/animations": "^15.0.2",
@@ -72,6 +75,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "lint-staged": "^13.0.4",
+    "markdownlint-cli2": "^0.5.1",
     "prettier": "^2.8.0",
     "stylelint": "^14.15.0",
     "stylelint-config-prettier": "^9.0.4",
