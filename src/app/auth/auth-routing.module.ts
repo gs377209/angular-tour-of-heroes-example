@@ -26,7 +26,7 @@ const routes: Routes = [
     },
     title: 'Profile',
     component: ProfileComponent,
-    canLoad: [AuthGuard],
+    canMatch: [AuthGuard],
     canActivate: [AuthGuard],
     data: { animation: 'profile' },
   },

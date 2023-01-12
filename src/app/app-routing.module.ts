@@ -1,11 +1,11 @@
 import { Injectable, NgModule } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import {
   RouterModule,
   RouterStateSnapshot,
   Routes,
   TitleStrategy,
 } from '@angular/router';
-import { Title } from '@angular/platform-browser';
 
 import { AuthGuard } from './auth/auth.guard';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
@@ -46,7 +46,7 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
-    canLoad: [AuthGuard],
+    canMatch: [AuthGuard],
     data: { animation: 'admin' },
   },
   {
