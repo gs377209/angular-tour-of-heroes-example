@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.4.1
+## 0.5.0
 
 - Update dependencies
 
