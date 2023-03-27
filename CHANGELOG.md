@@ -1,7 +1,8 @@
 # CHANGELOG
 
-## 0.5.1
+## 0.6.0
 
+- Update dependencies
 - Update Angular dependencies
 
 ## 0.5.0
