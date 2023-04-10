@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.7.1
+
+- Update Angular dependencies
+- Update dependencies
+
 ## 0.7.0
 
 - Update Angular dependencies
