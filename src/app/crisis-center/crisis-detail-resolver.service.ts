@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { EMPTY, Observable, mergeMap, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 
@@ -8,7 +8,7 @@ import { CrisisService } from './crisis.service';
 @Injectable({
   providedIn: 'root',
 })
-export class CrisisDetailResolverService implements Resolve<Crisis> {
+export class CrisisDetailResolverService {
   constructor(private cs: CrisisService, private router: Router) {}
 
   resolve(
