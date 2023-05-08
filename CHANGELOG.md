@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.0
+
+- Update to Angular 16
+
 ## 0.10.1
 
 - Update Angular dependencies
