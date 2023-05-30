@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2.0.0
+
+- TS v5
+- Update dependencies
+
 ## 1.0.0
 
 - Update to Angular 16
