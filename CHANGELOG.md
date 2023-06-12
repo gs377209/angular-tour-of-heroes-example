@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2.1.0
+
+- Update Angular dependencies
+- Update other dependencies
+
 ## 2.0.0
 
 - TS v5
