@@ -9,5 +9,3 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
-      # Check for npm updates on Sundays
-      day: "sunday"
