@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2.2.0 (2023-06-19)
+
+- Update Angular dependencies
+- Update other minor dependencies
+
 ## 2.1.0
 
 - Update Angular dependencies
