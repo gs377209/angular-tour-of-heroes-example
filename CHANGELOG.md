@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 3.0.0 (2023-06-26)
+
+- Update Angular dependencies
+- Update other major dependencies
+
 ## 2.2.0 (2023-06-19)
 
 - Update Angular dependencies
