@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 4.1.0 (2023-07-10)
+
+- Update Angular dependencies (patch)
+- Update other dependencies (minor)
+
 ## 4.0.0 (2023-07-10)
 
 - Update Angular dependencies (patch)
