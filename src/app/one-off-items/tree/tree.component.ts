@@ -45,13 +45,13 @@ export class TreeComponent {
       this.transformer,
       this.getLevel,
       this.isExpandable,
-      this.getChildren
+      this.getChildren,
     );
 
     this.treeControl = new FlatTreeControl(this.getLevel, this.isExpandable);
     this.dataSource = new MatTreeFlatDataSource(
       this.treeControl,
-      this.treeFlattener
+      this.treeFlattener,
     );
     this.dataSource.data = files;
   }

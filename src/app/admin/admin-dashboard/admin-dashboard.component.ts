@@ -17,7 +17,7 @@ export class AdminDashboardComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    preloadStrategy: SelectivePreloadingStrategyService
+    preloadStrategy: SelectivePreloadingStrategyService,
   ) {
     this.modules = preloadStrategy.preloadedModules;
   }
@@ -25,12 +25,12 @@ export class AdminDashboardComponent implements OnInit {
   ngOnInit() {
     // Capture the session ID if available
     this.sessionId$ = this.route.queryParamMap.pipe(
-      map((params) => params.get('session_id') || 'None')
+      map((params) => params.get('session_id') || 'None'),
     );
 
     // Capture the fragment if available
     this.token$ = this.route.fragment.pipe(
-      map((fragment) => fragment || 'None')
+      map((fragment) => fragment || 'None'),
     );
   }
 }

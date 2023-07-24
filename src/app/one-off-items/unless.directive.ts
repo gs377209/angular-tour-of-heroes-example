@@ -8,7 +8,7 @@ export class UnlessDirective {
 
   constructor(
     private templateRef: TemplateRef<unknown>,
-    private viewContainer: ViewContainerRef
+    private viewContainer: ViewContainerRef,
   ) {}
 
   @Input() set appUnless(condition: boolean) {

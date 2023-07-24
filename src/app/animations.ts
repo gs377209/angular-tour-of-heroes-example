@@ -42,7 +42,7 @@ export const slideInAnimation = trigger('routeAnimation', [
           width: '100%',
         }),
       ],
-      { optional: true }
+      { optional: true },
     ),
     query(':enter', [style({ left: '-100%' })], { optional: true }),
     query(':leave', animateChild(), { optional: true }),
@@ -50,7 +50,7 @@ export const slideInAnimation = trigger('routeAnimation', [
       query(
         ':leave',
         [animate('200ms ease-out', style({ left: '100%', opacity: 0 }))],
-        { optional: true }
+        { optional: true },
       ),
       query(':enter', [animate('300ms ease-out', style({ left: '0%' }))], {
         optional: true,

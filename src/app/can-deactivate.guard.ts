@@ -11,7 +11,7 @@ export interface CanComponentDeactivate {
 })
 export class CanDeactivateGuard {
   canDeactivate(
-    component: CanComponentDeactivate
+    component: CanComponentDeactivate,
   ):
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree>

@@ -22,7 +22,7 @@ export class CrisisDetailComponent implements OnInit, CanComponentDeactivate {
     private crisisService: CrisisService,
     private location: Location,
     private router: Router,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   canDeactivate(): Observable<boolean> | boolean {

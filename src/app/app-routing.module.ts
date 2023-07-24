@@ -30,7 +30,7 @@ const routes: Routes = [
     path: 'crisis-center',
     loadChildren: () =>
       import('./crisis-center/crisis-center.module').then(
-        (m) => m.CrisisCenterModule
+        (m) => m.CrisisCenterModule,
       ),
     data: { preload: true, animation: 'crisisCenter' },
   },
@@ -38,7 +38,7 @@ const routes: Routes = [
     path: 'one-off-items',
     loadChildren: () =>
       import('./one-off-items/one-off-items.module').then(
-        (m) => m.OneOffItemsModule
+        (m) => m.OneOffItemsModule,
       ),
     data: { animation: 'oneOffItems' },
   },

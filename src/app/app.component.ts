@@ -17,12 +17,12 @@ export class AppComponent {
     .observe(Breakpoints.Handset)
     .pipe(
       map((result) => result.matches),
-      shareReplay()
+      shareReplay(),
     );
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private contexts: ChildrenOutletContexts
+    private contexts: ChildrenOutletContexts,
   ) {}
 
   getAnimationData() {

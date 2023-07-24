@@ -129,7 +129,7 @@ describe('HeroDetailComponent', () => {
       // Get service injected into component and spy on its`updateHero` method.
       // It delegates to fake `HeroService.updateHero` which delivers a safe test result.
       const heroServiceSpy = fixture.debugElement.injector.get(
-        HeroService
+        HeroService,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ) as any;
       const updateHeroSpy = heroServiceSpy.updateHero;
@@ -147,7 +147,7 @@ describe('HeroDetailComponent', () => {
 
     it('should navigate when click save and save resolves', () => {
       const heroServiceSpy = fixture.debugElement.injector.get(
-        HeroService
+        HeroService,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ) as any;
       const updateHeroSpy = heroServiceSpy.updateHero;

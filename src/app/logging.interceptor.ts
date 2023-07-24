@@ -16,7 +16,7 @@ export class LoggingInterceptor implements HttpInterceptor {
 
   intercept(
     request: HttpRequest<unknown>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
     const started = Date.now();
     let ok: string;
@@ -36,7 +36,7 @@ export class LoggingInterceptor implements HttpInterceptor {
         const msg = `${request.method} "${request.urlWithParams}"
              ${ok} in ${elapsed} ms.`;
         this.messenger.add(msg);
-      })
+      }),
     );
   }
 }

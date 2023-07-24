@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.username$ = this.route.paramMap.pipe(
-      map((params: ParamMap) => params.get('username'))
+      map((params: ParamMap) => params.get('username')),
     );
   }
 }

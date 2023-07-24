@@ -9,10 +9,13 @@ import { CrisisService } from './crisis.service';
   providedIn: 'root',
 })
 export class CrisisDetailResolverService {
-  constructor(private cs: CrisisService, private router: Router) {}
+  constructor(
+    private cs: CrisisService,
+    private router: Router,
+  ) {}
 
   resolve(
-    route: ActivatedRouteSnapshot
+    route: ActivatedRouteSnapshot,
   ): Observable<Crisis> | Observable<never> {
     const id = parseInt(route.paramMap.get('id') ?? '', 10);
 
@@ -25,7 +28,7 @@ export class CrisisDetailResolverService {
           this.router.navigate(['/crisis-center']);
           return EMPTY;
         }
-      })
+      }),
     );
   }
 }

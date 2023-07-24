@@ -26,7 +26,7 @@ export class DashComponent {
         { title: 'Card 3', cols: 1, rows: 2 },
         { title: 'Card 4', cols: 1, rows: 1 },
       ];
-    })
+    }),
   );
 
   constructor(private breakpointObserver: BreakpointObserver) {}

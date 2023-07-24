@@ -17,7 +17,7 @@ export class ActivatedRouteStub {
     initialParams?: Params,
     initialQueryParams?: Params,
     initialFragment?: string | null,
-    initialData?: Data
+    initialData?: Data,
   ) {
     this.setParamMap(initialParams);
     this.setQueryParamMap(initialQueryParams);

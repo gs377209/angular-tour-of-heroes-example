@@ -25,6 +25,7 @@ module.exports = function (config) {
       suppressAll: true, // removes the duplicated traces
     },
     coverageReporter: {
+      // prettier-ignore
       dir: require("path").join(
         __dirname,
         "./coverage/angular-tour-of-heroes-example"

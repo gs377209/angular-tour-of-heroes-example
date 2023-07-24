@@ -22,7 +22,7 @@ describe('CrisisDetailComponent', () => {
       undefined,
       undefined,
       undefined,
-      { crisis: expectedCrisis }
+      { crisis: expectedCrisis },
     );
     const crisisService = jasmine.createSpyObj('CrisisService', ['getCrisis']);
     const c$ = cold('---x|', { x: expectedCrisis });

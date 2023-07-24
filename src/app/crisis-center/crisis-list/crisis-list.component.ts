@@ -16,7 +16,7 @@ export class CrisisListComponent implements OnInit {
 
   constructor(
     private crisisService: CrisisService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class CrisisListComponent implements OnInit {
       switchMap((params) => {
         this.selectedId = parseInt(params.get('id') ?? '', 10);
         return this.crisisService.getCrises();
-      })
+      }),
     );
   }
 

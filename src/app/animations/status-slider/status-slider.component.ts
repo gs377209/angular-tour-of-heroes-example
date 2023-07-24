@@ -24,7 +24,7 @@ import { Component } from '@angular/core';
             style({ backgroundColor: 'blue', offset: 0 }),
             style({ backgroundColor: 'red', offset: 0.8 }),
             style({ backgroundColor: '#754600', offset: 1.0 }),
-          ])
+          ]),
         ),
       ]),
       transition('* => inactive', [
@@ -34,7 +34,7 @@ import { Component } from '@angular/core';
             style({ backgroundColor: '#754600', offset: 0 }),
             style({ backgroundColor: 'red', offset: 0.2 }),
             style({ backgroundColor: 'blue', offset: 1.0 }),
-          ])
+          ]),
         ),
       ]),
 
@@ -45,7 +45,7 @@ import { Component } from '@angular/core';
             style({ backgroundColor: 'blue' }),
             style({ backgroundColor: 'red' }),
             style({ backgroundColor: 'orange' }),
-          ])
+          ]),
         ),
       ]),
     ]),

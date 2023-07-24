@@ -17,14 +17,14 @@ export class CrisisService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService
+    private messageService: MessageService,
   ) {}
 
   /** GET crises from the server */
   getCrises(): Observable<Crisis[]> {
     return this.http.get<Crisis[]>(this.crisesUrl).pipe(
       tap(() => this.log('fetched crises')),
-      catchError(this.handleError<Crisis[]>('getCrises', []))
+      catchError(this.handleError<Crisis[]>('getCrises', [])),
     );
   }
 
@@ -37,7 +37,7 @@ export class CrisisService {
         const outcome = h ? 'fetched' : 'did not find';
         this.log(`${outcome} crisis id=${id}`);
       }),
-      catchError(this.handleError<Crisis>(`getCrisis id=${id}`))
+      catchError(this.handleError<Crisis>(`getCrisis id=${id}`)),
     );
   }
 
@@ -47,7 +47,7 @@ export class CrisisService {
 
     return this.http.get<Crisis>(url).pipe(
       tap(() => this.log(`fetched crisis id=${id}`)),
-      catchError(this.handleError<Crisis>(`getCrisis id=${id}`))
+      catchError(this.handleError<Crisis>(`getCrisis id=${id}`)),
     );
   }
 
@@ -61,9 +61,9 @@ export class CrisisService {
       tap((x) =>
         x.length
           ? this.log(`found crises matching "${term}"`)
-          : this.log(`no crises matching "${term}"`)
+          : this.log(`no crises matching "${term}"`),
       ),
-      catchError(this.handleError<Crisis[]>('searchCrises', []))
+      catchError(this.handleError<Crisis[]>('searchCrises', [])),
     );
   }
 
@@ -75,9 +75,9 @@ export class CrisisService {
       .post<Crisis>(this.crisesUrl, crisis, this.httpOptions)
       .pipe(
         tap((newCrisis: Crisis) =>
-          this.log(`added crisis w/ id=${newCrisis.id}`)
+          this.log(`added crisis w/ id=${newCrisis.id}`),
         ),
-        catchError(this.handleError<Crisis>('addCrisis'))
+        catchError(this.handleError<Crisis>('addCrisis')),
       );
   }
 
@@ -87,7 +87,7 @@ export class CrisisService {
 
     return this.http.delete<Crisis>(url, this.httpOptions).pipe(
       tap(() => this.log(`deleted crisis id=${id}`)),
-      catchError(this.handleError<Crisis>('deleteCrisis'))
+      catchError(this.handleError<Crisis>('deleteCrisis')),
     );
   }
 
@@ -95,7 +95,7 @@ export class CrisisService {
   updateCrisis(crisis: Crisis): Observable<unknown> {
     return this.http.put(this.crisesUrl, crisis, this.httpOptions).pipe(
       tap(() => this.log(`updated crisis id=${crisis.id}`)),
-      catchError(this.handleError<never>('updateCrisis'))
+      catchError(this.handleError<never>('updateCrisis')),
     );
   }
 

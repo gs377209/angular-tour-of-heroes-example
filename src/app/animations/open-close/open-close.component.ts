@@ -22,7 +22,7 @@ import { transitionAnimation } from 'src/app/animations';
           height: '200px',
           opacity: 1,
           backgroundColor: 'yellow',
-        })
+        }),
       ),
       state(
         'closed',
@@ -30,7 +30,7 @@ import { transitionAnimation } from 'src/app/animations';
           height: '100px',
           opacity: 0.8,
           backgroundColor: 'blue',
-        })
+        }),
       ),
       transition('open => closed', [
         useAnimation(transitionAnimation, {

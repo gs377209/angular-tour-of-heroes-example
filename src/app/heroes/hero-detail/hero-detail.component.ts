@@ -18,7 +18,7 @@ export class HeroDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private heroService: HeroService,
     private location: Location,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -40,7 +40,7 @@ export class HeroDetailComponent implements OnInit {
         } else {
           return this.heroService.getHero(parseInt(id, 10));
         }
-      })
+      }),
     );
 
     this.hero$.subscribe((hero) => {
