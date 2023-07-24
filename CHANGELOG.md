@@ -1,12 +1,12 @@
 # CHANGELOG
 
-## 5.0.0 (2023-07-10)
+## 5.0.0 (2023-07-24)
 
 - Update Angular dependencies (patch)
 - Update other dependencies (minor)
 - Remove stylelint plugin and node types
 
-## 4.1.0 (2023-07-10)
+## 4.1.0 (2023-07-17)
 
 - Update Angular dependencies (patch)
 - Update other dependencies (minor)
