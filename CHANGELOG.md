@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 5.2.0 (2023-07-31)
+
+- Update Angular dependencies (minor)
+- Update other dependencies (minor)
+
 ## 5.1.0 (2023-07-31)
 
 - Update Angular dependencies (patch)
