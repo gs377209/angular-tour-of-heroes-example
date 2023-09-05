@@ -4,6 +4,7 @@
 
 - Update Angular dependencies (minor)
 - Update other dependencies (minor)
+- Override `rxfire` dependency
 
 ## 5.3.0 (2023-08-14)
 
