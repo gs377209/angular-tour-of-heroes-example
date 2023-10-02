@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 6.0.0 (2023-10-02)
+
+- Update Angular dependencies
+- Update other dependencies
+- Added `ngrx` store
+
 ## 5.4.0 (2023-09-05)
 
 - Update Angular dependencies (minor)
