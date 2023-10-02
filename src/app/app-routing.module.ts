@@ -62,6 +62,11 @@ const routes: Routes = [
     data: { animation: 'animations' },
   },
   {
+    path: 'book',
+    loadChildren: () => import('./book/book.module').then((m) => m.BookModule),
+    data: { animation: 'book' },
+  },
+  {
     path: '**',
     title: 'Page Not Found',
     component: PageNotFoundComponent,

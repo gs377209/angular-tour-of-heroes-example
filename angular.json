@@ -201,7 +201,7 @@
   },
   "cli": {
     "analytics": "354b342f-06d9-4f2d-8701-e3021452fa27",
-    "schematicCollections": ["@angular-eslint/schematics"]
+    "schematicCollections": ["@angular-eslint/schematics", "@ngrx/schematics"]
   },
   "schematics": {
     "@angular-eslint/schematics:application": {
@@ -209,6 +209,9 @@
     },
     "@angular-eslint/schematics:library": {
       "setParserOptionsProject": true
+    },
+    "@ngrx/schematics:container": {
+      "style": "scss"
     }
   }
 }

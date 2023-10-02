@@ -1,6 +1,6 @@
 import { NgOptimizedImage } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import {
   ScreenTrackingService,
   UserTrackingService,
@@ -39,15 +39,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { EntityDataModule } from '@ngrx/data';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppEffects } from './app.effects';
 import { AuthModule } from './auth/auth.module';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
+import { entityConfig } from './entity-metadata';
 import { httpInterceptorProviders } from './http-interceptors';
 import { InMemoryDataService } from './in-memory-data.service';
 import { MessagesComponent } from './messages/messages.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { metaReducers, reducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -66,6 +74,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
+      passThruUnknownUrl: true,
     }),
     BrowserAnimationsModule,
     NgOptimizedImage,
@@ -99,6 +108,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
       registrationStrategy: 'registerWhenStable:30000',
     }),
     RouterModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([AppEffects]),
+    StoreRouterConnectingModule.forRoot(),
+    EntityDataModule.forRoot(entityConfig),
   ],
   providers: [
     ScreenTrackingService,

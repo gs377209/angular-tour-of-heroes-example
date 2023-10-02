@@ -1,0 +1,7 @@
+<h2>Books</h2>
+<app-book-list
+  class="book-list"
+  [books]="(books$ | async)!"
+  (add)="onAdd($event)"
+  (remove)="onRemove($event)"
+></app-book-list>

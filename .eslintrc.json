@@ -67,6 +67,10 @@
         "prettier"
       ],
       "rules": {}
+    },
+    {
+      "files": ["*.ts"],
+      "extends": ["plugin:@ngrx/all-requiring-type-checking"]
     }
   ]
 }
