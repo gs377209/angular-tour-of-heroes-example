@@ -8,9 +8,8 @@ h2 {
   /* flexbox */
   display: flex;
   flex-flow: row wrap;
-  align-content: flex-start;
   align-items: flex-start;
-  justify-content: space-around;
+  place-content: flex-start space-around;
   max-width: 1000px;
   margin: auto;
   padding: 0;

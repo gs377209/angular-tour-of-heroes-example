@@ -21,9 +21,8 @@
 main {
   display: flex;
   flex-flow: row wrap;
-  align-content: flex-start;
   align-items: flex-start;
-  justify-content: space-between;
+  place-content: flex-start space-between;
   margin: auto;
   padding: 1rem;
 }
