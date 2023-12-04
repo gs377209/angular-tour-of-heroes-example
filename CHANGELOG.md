@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 8.0.0 (2023-12-04)
+
+- Update Angular dependencies (v17)
+- Update other dependencies
+- Added `--legacy-peer-deps` thanks to firebase...
+- `prettier-ignore` added for ICU phrase
+
 ## 7.0.0 (2023-11-01)
 
 - Update Angular dependencies
