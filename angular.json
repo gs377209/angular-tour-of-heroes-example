@@ -88,13 +88,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-tour-of-heroes-example:build:production"
+              "buildTarget": "angular-tour-of-heroes-example:build:production"
             },
             "development": {
-              "browserTarget": "angular-tour-of-heroes-example:build:development"
+              "buildTarget": "angular-tour-of-heroes-example:build:development"
             },
             "fr": {
-              "browserTarget": "angular-tour-of-heroes-example:build:development,fr"
+              "buildTarget": "angular-tour-of-heroes-example:build:development,fr"
             }
           },
           "defaultConfiguration": "development"
@@ -102,7 +102,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-tour-of-heroes-example:build"
+            "buildTarget": "angular-tour-of-heroes-example:build"
           }
         },
         "test": {
