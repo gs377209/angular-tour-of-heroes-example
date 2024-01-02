@@ -41,5 +41,13 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json
 
+# NX
+.nx/cache/
+
+# prettier doesn't understand this wild syntax
 src/app/heroes/dashboard/dashboard.component.html
