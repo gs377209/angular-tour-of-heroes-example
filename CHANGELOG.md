@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 9.0.0 (2024-01-02)
+
+- Update Angular dependencies (v17)
+- Update other dependencies
+- Removed `--legacy-peer-deps`
+
 ## 8.0.0 (2023-12-04)
 
 - Update Angular dependencies (v17)
