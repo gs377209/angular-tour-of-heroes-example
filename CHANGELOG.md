@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 10.0.0 (2024-02-01)
+
+- Update Angular dependencies (v17, minor)
+- Update other dependencies (major)
+
 ## 9.0.0 (2024-01-02)
 
 - Update Angular dependencies (v17)

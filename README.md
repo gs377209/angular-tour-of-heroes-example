@@ -1,5 +1,15 @@
 # AngularTourOfHeroesExample
 
+[![CodeQL](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/github-code-scanning/codeql)
+[![Dependency Review](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/dependency-review.yml)
+[![Greetings](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/greetings.yml/badge.svg)](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/greetings.yml)
+[![Labeler](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/label.yml/badge.svg)](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/label.yml)
+[![Manual workflow](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/manual.yml/badge.svg)](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/manual.yml)
+[![Mark stale issues and pull requests](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/stale.yml/badge.svg)](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/stale.yml)
+[![Node.js CI](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/node.js.yml/badge.svg)](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/node.js.yml)
+[![Node.js Package](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/npm-publish.yml)
+[![OSSAR](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/ossar.yml/badge.svg)](https://github.com/gs377209/angular-tour-of-heroes-example/actions/workflows/ossar.yml)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
 - Vercel: <https://angular-tour-of-heroes-example.vercel.app/en-US/>
