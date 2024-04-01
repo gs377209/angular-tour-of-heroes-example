@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 12.0.0 (2024-04-01)
+
+- Fix audit issues
+
 ## 11.0.0 (2024-03-04)
 
 - Update Angular dependencies (v17, minor)
