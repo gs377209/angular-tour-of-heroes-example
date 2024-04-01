@@ -1,8 +1,9 @@
 # CHANGELOG
 
-## 12.0.0 (2024-04-01)
+## 11.1.0 (2024-04-01)
 
 - Fix audit issues
+- Angular Updates (minor)
 
 ## 11.0.0 (2024-03-04)
 
