@@ -5,6 +5,7 @@
 - Fix audit issues
 - Angular Updates (minor)
 - Other Updates (minor)
+- Revert TS to 5.3
 
 ## 11.0.0 (2024-03-04)
 
