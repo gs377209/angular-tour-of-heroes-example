@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 11.1.0 (2024-04-01)
+
+- Fix audit issues
+- Angular Updates (minor)
+- Other Updates (minor)
+- Revert TS to 5.3
+
 ## 11.0.0 (2024-03-04)
 
 - Update Angular dependencies (v17, minor)
