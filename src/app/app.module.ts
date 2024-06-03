@@ -1,5 +1,8 @@
 import { NgOptimizedImage } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { NgModule, isDevMode } from '@angular/core';
 import {
   ScreenTrackingService,
@@ -64,11 +67,11 @@ import { metaReducers, reducers } from './reducers';
     PageNotFoundComponent,
     ComposeMessageComponent,
   ],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -122,7 +125,7 @@ import { metaReducers, reducers } from './reducers';
     ScreenTrackingService,
     UserTrackingService,
     httpInterceptorProviders,
+    provideHttpClient(withInterceptorsFromDi()),
   ],
-  bootstrap: [AppComponent],
 })
 export class AppModule {}

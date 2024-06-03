@@ -1,8 +1,12 @@
 import {
-  HttpClientTestingModule,
+  HttpClient,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import {
   HttpTestingController,
+  provideHttpClientTesting,
 } from '@angular/common/http/testing';
-import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
 import { CrisisService } from './crisis.service';
@@ -12,7 +16,11 @@ describe('CrisisService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [],
+      providers: [
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+      ],
     });
 
     TestBed.inject(HttpClient);
