@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 12.0.0 (2024-06-04)
+
+- Angular Updates (major)
+- Other Updates (major)
+
 ## 11.2.0 (2024-05-01)
 
 - Angular Updates (minor)
