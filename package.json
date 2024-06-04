@@ -27,7 +27,7 @@
     "version": "npm run build && git add .",
     "postversion": "git push && git push --tags && rm -rf build/temp && rm -rf dist",
     "extract": "ng extract-i18n --output-path=src/locale",
-    "typecheck": "tsc -p ./tsconfig.app.json && tsc -p ./tsconfig.spec.json && tsc -p ./tsconfig.server.json && tsc -p ./tsconfig.worker.json",
+    "typecheck": "tsc -p ./tsconfig.app.json && tsc -p ./tsconfig.spec.json && tsc -p ./tsconfig.worker.json",
     "mdlint": "markdownlint-cli2 '**/*.md' '#node_modules'",
     "mdlintfix": "markdownlint-cli2-fix '**/*.md' '#node_modules'",
     "serve:ssr:angular-tour-of-heroes-example": "node dist/angular-tour-of-heroes-example/server/server.mjs"
