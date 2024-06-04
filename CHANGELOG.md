@@ -4,6 +4,9 @@
 
 - Angular Updates (major)
 - Other Updates (minor)
+- Update Node (patch)
+- Added `legacy-peer-deps` due to `ngrx`
+- Fix `SSR` migrations
 
 ## 11.2.0 (2024-05-01)
 
