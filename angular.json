@@ -23,14 +23,15 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "localize": true,
             "i18nMissingTranslation": "error",
-            "outputPath": "dist/angular-tour-of-heroes-example/browser",
+            "outputPath": {
+              "base": "dist/angular-tour-of-heroes-example"
+            },
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -43,9 +44,14 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "serviceWorker": true,
-            "ngswConfigPath": "ngsw-config.json",
-            "webWorkerTsConfig": "tsconfig.worker.json"
+            "serviceWorker": "ngsw-config.json",
+            "webWorkerTsConfig": "tsconfig.worker.json",
+            "browser": "src/main.ts",
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -71,9 +77,7 @@
             },
             "development": {
               "localize": false,
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -141,60 +145,6 @@
             "firebaseProject": "angular-heroes-example",
             "firebaseHostingSite": "angular-heroes-example"
           }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "localize": true,
-            "outputPath": "dist/angular-tour-of-heroes-example/server",
-            "main": "src/main.server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "i18nMissingTranslation": "error",
-            "inlineStyleLanguage": "scss"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
-            },
-            "development": {
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false,
-              "vendorChunk": true,
-              "buildOptimizer": false
-            },
-            "fr": {
-              "localize": ["fr"]
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "app-shell": {
-          "builder": "@angular-devkit/build-angular:app-shell",
-          "options": {
-            "route": "shell"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "angular-tour-of-heroes-example:build:production",
-              "serverTarget": "angular-tour-of-heroes-example:server:production"
-            },
-            "development": {
-              "browserTarget": "angular-tour-of-heroes-example:build:development",
-              "serverTarget": "angular-tour-of-heroes-example:server:development"
-            },
-            "fr": {
-              "browserTarget": "angular-tour-of-heroes-example:build:development,fr",
-              "serverTarget": "angular-tour-of-heroes-example:server:development,fr"
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }

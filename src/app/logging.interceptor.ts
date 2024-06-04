@@ -5,8 +5,8 @@ import {
   HttpRequest,
   HttpResponse,
 } from '@angular/common/http';
-import { Observable, finalize, tap } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { Observable, finalize, tap } from 'rxjs';
 
 import { MessageService } from './message.service';
 
