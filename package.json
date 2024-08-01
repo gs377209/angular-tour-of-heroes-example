@@ -1,7 +1,7 @@
 {
   "name": "angular-tour-of-heroes-example",
   "repository": "https://github.com/gs377209/angular-tour-of-heroes-example.git",
-  "version": "12.0.0",
+  "version": "13.0.0",
   "description": "learning angular",
   "engines": {
     "node": "^18.19.1",
