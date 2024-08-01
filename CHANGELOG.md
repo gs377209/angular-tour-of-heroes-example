@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 13.0.0 (2024-06-04)
+
+- Angular Updates (major)
+- Other Updates (major)
+- Set `legacy-peer-deps` to false
+
 ## 12.0.0 (2024-06-04)
 
 - Angular Updates (major)
