@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 14.0.0 (2024-09-03)
+
+- Angular Updates (minor)
+- Other Updates (major)
+- Node upgrade
+
 ## 13.0.0 (2024-06-04)
 
 - Angular Updates (major)
