@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 15.0.0 (2024-10-17)
+
+- Angular Updates (minor)
+- Other Updates (major)
+
 ## 14.0.0 (2024-09-03)
 
 - Angular Updates (minor)
