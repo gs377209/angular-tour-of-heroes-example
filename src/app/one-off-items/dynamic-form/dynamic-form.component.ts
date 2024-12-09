@@ -5,11 +5,11 @@ import { QuestionBase } from '../question-base';
 import { QuestionControlService } from '../question-control.service';
 
 @Component({
-    selector: 'app-dynamic-form',
-    templateUrl: './dynamic-form.component.html',
-    styleUrls: ['./dynamic-form.component.scss'],
-    providers: [QuestionControlService],
-    standalone: false
+  selector: 'app-dynamic-form',
+  templateUrl: './dynamic-form.component.html',
+  styleUrls: ['./dynamic-form.component.scss'],
+  providers: [QuestionControlService],
+  standalone: false,
 })
 export class DynamicFormComponent implements OnInit {
   @Input() questions: QuestionBase<string>[] | null = [];

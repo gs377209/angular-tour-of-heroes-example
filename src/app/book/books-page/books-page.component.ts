@@ -4,9 +4,9 @@ import { BookActions } from '../state/book.actions';
 import { selectAll } from '../state/book.reducer';
 
 @Component({
-    selector: 'app-books-page',
-    templateUrl: './books-page.component.html',
-    standalone: false
+  selector: 'app-books-page',
+  templateUrl: './books-page.component.html',
+  standalone: false,
 })
 export class BooksPageComponent implements OnInit {
   books$ = this.store.select(selectAll);

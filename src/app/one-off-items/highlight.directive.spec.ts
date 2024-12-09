@@ -9,8 +9,8 @@ describe('HighlightDirective', () => {
       <h2 appHighlight>The Default (Black)</h2>
       <h2>No Highlight</h2>
       <input #box [appHighlight]="box.value" value="cyan" />`,
-    standalone: false
-})
+    standalone: false,
+  })
   class TestComponent {}
 
   let fixture: ComponentFixture<TestComponent>;

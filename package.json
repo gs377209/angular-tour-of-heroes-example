@@ -1,7 +1,7 @@
 {
   "name": "angular-tour-of-heroes-example",
   "repository": "https://github.com/gs377209/angular-tour-of-heroes-example.git",
-  "version": "15.0.0",
+  "version": "16.0.0",
   "description": "learning angular",
   "engines": {
     "node": "^22.11.0 || ^20.9.0 || ^18.12.0",
@@ -32,15 +32,16 @@
     "prettier:check": "prettier --check .",
     "prepare": "husky",
     "lint": "ng lint --max-warnings 0",
+    "lint:fix": "ng lint --max-warnings 0 --fix",
     "stylelint": "stylelint --max-warnings 0 'src/**/*.{css,scss,sass}'",
-    "preversion": "npm run test:ci",
-    "version": "npm run build && git add .",
-    "postversion": "git push && git push --tags && rm -rf build/temp && rm -rf dist",
     "extract": "ng extract-i18n --output-path=src/locale",
     "typecheck": "tsc -p ./tsconfig.app.json && tsc -p ./tsconfig.spec.json && tsc -p ./tsconfig.worker.json",
     "mdlint": "markdownlint-cli2 '**/*.md' '#node_modules'",
     "mdlintfix": "markdownlint-cli2-fix '**/*.md' '#node_modules'",
-    "serve:ssr:angular-tour-of-heroes-example": "node dist/angular-tour-of-heroes-example/server/server.mjs"
+    "serve:ssr:angular-tour-of-heroes-example": "node dist/angular-tour-of-heroes-example/server/server.mjs",
+    "preversion": "npm run prettier:check && npm run lint && npm run stylelint && npm run typecheck && npm run mdlint && npm run test:ci",
+    "version": "npm run build",
+    "postversion": ""
   },
   "dependencies": {
     "@angular/animations": "^19.0.3",
@@ -89,7 +90,7 @@
     "@types/jasmine": "^5.1.5",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
-    "eslint": "^9.16.0",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^9.1.7",
     "jasmine-core": "^5.5.0",
@@ -106,7 +107,7 @@
     "stylelint-config-standard": "^36.0.1",
     "stylelint-config-standard-scss": "^14.0.0",
     "stylelint-order": "^6.0.4",
-    "typescript": "^5.7.2"
+    "typescript": "~5.6"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

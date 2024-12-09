@@ -10,8 +10,8 @@ describe('UnlessDirective', () => {
       <h2 *appUnless="false">false</h2>
       <h2>No unless</h2>
     `,
-    standalone: false
-})
+    standalone: false,
+  })
   class TestComponent {}
 
   let fixture: ComponentFixture<TestComponent>;

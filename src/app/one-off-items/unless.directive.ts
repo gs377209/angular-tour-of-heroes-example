@@ -1,8 +1,8 @@
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive({
-    selector: '[appUnless]',
-    standalone: false
+  selector: '[appUnless]',
+  standalone: false,
 })
 export class UnlessDirective {
   private hasView = false;

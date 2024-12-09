@@ -9,10 +9,10 @@ import { CrisisService } from '../crisis.service';
 import { DialogService } from 'src/app/dialog.service';
 
 @Component({
-    selector: 'app-crisis-detail',
-    templateUrl: './crisis-detail.component.html',
-    styleUrls: ['./crisis-detail.component.scss'],
-    standalone: false
+  selector: 'app-crisis-detail',
+  templateUrl: './crisis-detail.component.html',
+  styleUrls: ['./crisis-detail.component.scss'],
+  standalone: false,
 })
 export class CrisisDetailComponent implements OnInit, CanComponentDeactivate {
   crisis!: Crisis;

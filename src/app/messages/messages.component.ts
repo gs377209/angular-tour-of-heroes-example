@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 import { MessageService } from '../message.service';
 
 @Component({
-    selector: 'app-messages',
-    templateUrl: './messages.component.html',
-    styleUrls: ['./messages.component.scss'],
-    standalone: false
+  selector: 'app-messages',
+  templateUrl: './messages.component.html',
+  styleUrls: ['./messages.component.scss'],
+  standalone: false,
 })
 export class MessagesComponent {
   constructor(public messageService: MessageService) {}

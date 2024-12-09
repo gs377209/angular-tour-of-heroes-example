@@ -3,10 +3,10 @@ import { FormGroup } from '@angular/forms';
 import { QuestionBase } from '../question-base';
 
 @Component({
-    selector: 'app-dynamic-form-question',
-    templateUrl: './dynamic-form-question.component.html',
-    styleUrls: ['./dynamic-form-question.component.scss'],
-    standalone: false
+  selector: 'app-dynamic-form-question',
+  templateUrl: './dynamic-form-question.component.html',
+  styleUrls: ['./dynamic-form-question.component.scss'],
+  standalone: false,
 })
 export class DynamicFormQuestionComponent {
   @Input() question!: QuestionBase<string>;

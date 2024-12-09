@@ -15,57 +15,64 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
 @Component({
-    selector: 'app-hero-list',
-    templateUrl: './hero-list.component.html',
-    styleUrls: ['./hero-list.component.scss'],
-    animations: [
-        trigger('flyInOut', [
-            state('in', style({ transform: 'translateX(0)' })),
-            transition('void => *', [
-                style({ transform: 'translateX(-100%)' }),
-                animate(100),
+  selector: 'app-hero-list',
+  templateUrl: './hero-list.component.html',
+  styleUrls: ['./hero-list.component.scss'],
+  animations: [
+    trigger('flyInOut', [
+      state('in', style({ transform: 'translateX(0)' })),
+      transition('void => *', [
+        style({ transform: 'translateX(-100%)' }),
+        animate(100),
+      ]),
+      transition('* => void', [
+        animate(100, style({ transform: 'translateX(100%)' })),
+      ]),
+      transition(':enter', [
+        style({ transform: 'translateX(-100%)' }),
+        animate(100),
+      ]),
+      transition(':leave', [
+        animate(100, style({ transform: 'translateX(100%)' })),
+      ]),
+    ]),
+    trigger('filterAnimation', [
+      transition(':enter, * => 0, * => -1', []),
+      transition(':increment', [
+        query(
+          ':enter',
+          [
+            style({ opacity: 0, width: 0 }),
+            stagger(50, [
+              animate('300ms ease-out', style({ opacity: 1, width: '*' })),
             ]),
-            transition('* => void', [
-                animate(100, style({ transform: 'translateX(100%)' })),
-            ]),
-            transition(':enter', [
-                style({ transform: 'translateX(-100%)' }),
-                animate(100),
-            ]),
-            transition(':leave', [
-                animate(100, style({ transform: 'translateX(100%)' })),
-            ]),
+          ],
+          { optional: true },
+        ),
+      ]),
+      transition(':decrement', [
+        query(':leave', [
+          stagger(50, [
+            animate('300ms ease-out', style({ opacity: 0, width: 0 })),
+          ]),
         ]),
-        trigger('filterAnimation', [
-            transition(':enter, * => 0, * => -1', []),
-            transition(':increment', [
-                query(':enter', [
-                    style({ opacity: 0, width: 0 }),
-                    stagger(50, [
-                        animate('300ms ease-out', style({ opacity: 1, width: '*' })),
-                    ]),
-                ], { optional: true }),
-            ]),
-            transition(':decrement', [
-                query(':leave', [
-                    stagger(50, [
-                        animate('300ms ease-out', style({ opacity: 0, width: 0 })),
-                    ]),
-                ]),
-            ]),
+      ]),
+    ]),
+    trigger('pageAnimations', [
+      transition(':enter', [
+        query('.hero', [
+          style({ opacity: 0, transform: 'translateY(-100px)' }),
+          stagger(30, [
+            animate(
+              '500ms cubic-bezier(0.35, 0, 0.25, 1)',
+              style({ opacity: 1, transform: 'none' }),
+            ),
+          ]),
         ]),
-        trigger('pageAnimations', [
-            transition(':enter', [
-                query('.hero', [
-                    style({ opacity: 0, transform: 'translateY(-100px)' }),
-                    stagger(30, [
-                        animate('500ms cubic-bezier(0.35, 0, 0.25, 1)', style({ opacity: 1, transform: 'none' })),
-                    ]),
-                ]),
-            ]),
-        ]),
-    ],
-    standalone: false
+      ]),
+    ]),
+  ],
+  standalone: false,
 })
 export class HeroListComponent implements OnInit {
   heroes$!: Observable<Hero[]>;

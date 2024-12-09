@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 
 @Component({
-    selector: 'app-dash',
-    templateUrl: './dash.component.html',
-    styleUrls: ['./dash.component.scss'],
-    standalone: false
+  selector: 'app-dash',
+  templateUrl: './dash.component.html',
+  styleUrls: ['./dash.component.scss'],
+  standalone: false,
 })
 export class DashComponent {
   /** Based on the screen size, switch from standard to one column per row */

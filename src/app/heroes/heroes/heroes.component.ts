@@ -4,11 +4,11 @@ import { Component } from '@angular/core';
 import { slideInAnimation } from 'src/app/animations';
 
 @Component({
-    selector: 'app-heroes',
-    templateUrl: './heroes.component.html',
-    styleUrls: ['./heroes.component.scss'],
-    animations: [slideInAnimation],
-    standalone: false
+  selector: 'app-heroes',
+  templateUrl: './heroes.component.html',
+  styleUrls: ['./heroes.component.scss'],
+  animations: [slideInAnimation],
+  standalone: false,
 })
 export class HeroesComponent {
   constructor(private contexts: ChildrenOutletContexts) {}
