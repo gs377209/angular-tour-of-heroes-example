@@ -1,5 +1,23 @@
 # CHANGELOG
 
+## 16.0.0 (2024-12-09)
+
+- Angular Updates (19)
+- Node Updates (22)
+- Other Updates (major)
+- Firebase breaking peers...
+
+## 15.0.0 (2024-10-17)
+
+- Angular Updates (minor)
+- Other Updates (major)
+
+## 14.0.0 (2024-09-03)
+
+- Angular Updates (minor)
+- Other Updates (major)
+- Node upgrade
+
 ## 13.0.0 (2024-06-04)
 
 - Angular Updates (major)
