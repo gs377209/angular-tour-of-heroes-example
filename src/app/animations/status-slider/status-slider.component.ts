@@ -16,7 +16,6 @@ import { Component } from '@angular/core';
     trigger('slideStatus', [
       state('inactive', style({ backgroundColor: 'blue' })),
       state('active', style({ backgroundColor: '#754600' })),
-
       transition('* => active', [
         animate(
           '2s',
@@ -37,7 +36,6 @@ import { Component } from '@angular/core';
           ]),
         ),
       ]),
-
       transition('* => active', [
         animate(
           '2s',
@@ -50,6 +48,7 @@ import { Component } from '@angular/core';
       ]),
     ]),
   ],
+  standalone: false,
 })
 export class StatusSliderComponent {
   status: 'active' | 'inactive' = 'inactive';

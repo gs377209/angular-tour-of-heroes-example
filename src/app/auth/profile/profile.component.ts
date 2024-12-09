@@ -6,6 +6,7 @@ import { Observable, map } from 'rxjs';
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
+  standalone: false,
 })
 export class ProfileComponent implements OnInit {
   username$!: Observable<string | null>;

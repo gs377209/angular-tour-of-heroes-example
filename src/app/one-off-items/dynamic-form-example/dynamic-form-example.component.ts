@@ -9,6 +9,7 @@ import { QuestionService } from '../question.service';
   templateUrl: './dynamic-form-example.component.html',
   styleUrls: ['./dynamic-form-example.component.scss'],
   providers: [QuestionService],
+  standalone: false,
 })
 export class DynamicFormExampleComponent {
   questions$: Observable<QuestionBase<string>[]>;

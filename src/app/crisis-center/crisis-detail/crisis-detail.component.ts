@@ -12,6 +12,7 @@ import { DialogService } from 'src/app/dialog.service';
   selector: 'app-crisis-detail',
   templateUrl: './crisis-detail.component.html',
   styleUrls: ['./crisis-detail.component.scss'],
+  standalone: false,
 })
 export class CrisisDetailComponent implements OnInit, CanComponentDeactivate {
   crisis!: Crisis;
