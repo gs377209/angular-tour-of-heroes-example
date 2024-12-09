@@ -26,9 +26,10 @@ export interface FlatTreeNode {
 }
 
 @Component({
-  selector: 'app-tree',
-  templateUrl: './tree.component.html',
-  styleUrls: ['./tree.component.scss'],
+    selector: 'app-tree',
+    templateUrl: './tree.component.html',
+    styleUrls: ['./tree.component.scss'],
+    standalone: false
 })
 export class TreeComponent {
   /** The TreeControl controls the expand/collapse state of tree nodes.  */

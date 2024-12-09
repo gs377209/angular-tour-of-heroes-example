@@ -6,9 +6,10 @@ import { Crisis } from '../crisis';
 import { CrisisService } from '../crisis.service';
 
 @Component({
-  selector: 'app-crisis-list',
-  templateUrl: './crisis-list.component.html',
-  styleUrls: ['./crisis-list.component.scss'],
+    selector: 'app-crisis-list',
+    templateUrl: './crisis-list.component.html',
+    styleUrls: ['./crisis-list.component.scss'],
+    standalone: false
 })
 export class CrisisListComponent implements OnInit {
   crises$!: Observable<Crisis[]>;
