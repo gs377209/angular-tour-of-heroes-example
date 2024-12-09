@@ -9,6 +9,7 @@ import { SelectivePreloadingStrategyService } from 'src/app/selective-preloading
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.scss'],
+  standalone: false,
 })
 export class AdminDashboardComponent implements OnInit {
   sessionId$!: Observable<string>;

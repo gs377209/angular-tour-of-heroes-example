@@ -72,6 +72,7 @@ import { HeroService } from '../hero.service';
       ]),
     ]),
   ],
+  standalone: false,
 })
 export class HeroListComponent implements OnInit {
   heroes$!: Observable<Hero[]>;

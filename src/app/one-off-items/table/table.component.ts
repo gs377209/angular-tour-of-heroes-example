@@ -9,6 +9,7 @@ import { TableDataSource, TableItem } from './table-datasource';
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
+  standalone: false,
 })
 export class TableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;

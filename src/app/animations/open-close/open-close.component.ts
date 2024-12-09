@@ -50,6 +50,7 @@ import { transitionAnimation } from 'src/app/animations';
       transition('* => *', [animate('1s')]),
     ]),
   ],
+  standalone: false,
 })
 export class OpenCloseComponent {
   isOpen = true;

@@ -5,6 +5,7 @@ import { Hero } from '../hero';
   selector: 'app-hero-form',
   templateUrl: './hero-form.component.html',
   styleUrls: ['./hero-form.component.scss'],
+  standalone: false,
 })
 export class HeroFormComponent {
   powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];

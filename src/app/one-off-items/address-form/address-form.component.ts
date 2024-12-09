@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   selector: 'app-address-form',
   templateUrl: './address-form.component.html',
   styleUrls: ['./address-form.component.scss'],
+  standalone: false,
 })
 export class AddressFormComponent {
   addressForm = this.fb.group({

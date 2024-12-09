@@ -14,6 +14,7 @@ import { Component } from '@angular/core';
       transition(':leave', [animate('100ms', style({ opacity: 0 }))]),
     ]),
   ],
+  standalone: false,
 })
 export class InsertRemoveComponent {
   isShown = true;

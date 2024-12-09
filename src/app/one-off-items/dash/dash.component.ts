@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
   selector: 'app-dash',
   templateUrl: './dash.component.html',
   styleUrls: ['./dash.component.scss'],
+  standalone: false,
 })
 export class DashComponent {
   /** Based on the screen size, switch from standard to one column per row */

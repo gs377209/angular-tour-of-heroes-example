@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
   selector: 'app-drag-drop',
   templateUrl: './drag-drop.component.html',
   styleUrls: ['./drag-drop.component.scss'],
+  standalone: false,
 })
 export class DragDropComponent {
   todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];

@@ -10,6 +10,7 @@ describe('UnlessDirective', () => {
       <h2 *appUnless="false">false</h2>
       <h2>No unless</h2>
     `,
+    standalone: false,
   })
   class TestComponent {}
 
