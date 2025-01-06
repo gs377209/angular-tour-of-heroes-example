@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 17.0.0 (2025-01-06)
+
+- Angular Updates (major)
+- Other Updates (major)
+- ESLint 9 changes
+
 ## 16.0.0 (2024-12-09)
 
 - Angular Updates (19)
