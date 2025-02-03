@@ -40,8 +40,7 @@
     "mdlintfix": "markdownlint-cli2-fix '**/*.md' '#node_modules'",
     "serve:ssr:angular-tour-of-heroes-example": "node dist/angular-tour-of-heroes-example/server/server.mjs",
     "preversion": "npm run prettier:check && npm run lint && npm run stylelint && npm run typecheck && npm run mdlint && npm run test:ci",
-    "version": "npm run build",
-    "postversion": ""
+    "version": "npm run build"
   },
   "dependencies": {
     "@angular/animations": "^19.1.4",
