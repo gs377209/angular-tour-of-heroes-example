@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 18.0.0 (2025-02-03)
+
+- Angular Updates (major)
+- Other Updates (major)
+
 ## 17.0.0 (2025-01-06)
 
 - Angular Updates (major)
