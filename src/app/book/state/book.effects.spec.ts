@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 import { BookService } from '../book.service';
 import { BookEffects } from './book.effects';
 
 describe('BookEffects', () => {
-  let actions$: Observable<unknown>;
+  const actions$: Observable<unknown> = of();
   let effects: BookEffects;
   let bookService: BookService;
 

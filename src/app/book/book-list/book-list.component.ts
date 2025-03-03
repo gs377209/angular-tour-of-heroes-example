@@ -7,7 +7,7 @@ import { Book } from '../book.model';
   standalone: false,
 })
 export class BookListComponent {
-  @Input() books: ReadonlyArray<Book> = [];
+  @Input() books: readonly Book[] = [];
   @Output() add = new EventEmitter<string>();
   @Output() remove = new EventEmitter<string>();
 }

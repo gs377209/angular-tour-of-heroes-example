@@ -9,7 +9,7 @@ import { Book } from './book.model';
 export class BookService {
   constructor(private http: HttpClient) {}
 
-  getBooks(): Observable<Array<Book>> {
+  getBooks(): Observable<Book[]> {
     return this.http
       .get<{
         items: Book[];
