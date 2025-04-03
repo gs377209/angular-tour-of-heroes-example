@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 19.0.2 (2025-04-03)
+
+- Angular Updates
+- Other Updates
+
 ## 19.0.1 (2025-03-27)
 
 - Angular Updates
